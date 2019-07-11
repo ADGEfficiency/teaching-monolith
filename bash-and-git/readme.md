@@ -18,6 +18,7 @@
 Use your new Git & Bash skills in setting up a blog on Gitpages
 
 1. setup [Jekyll](https://jekyllrb.com/docs/installation/) - a static site generator
+2. [create a jekyll site in a folder called GITHUBUSERNAME.github.io](https://jekyllrb.com/docs/)
 2. create a git repo and push up to a repo named `username.github.io` ([see here](https://guides.github.com/features/pages/))
 3. start wrining blog posts in the `_posts` folder
 

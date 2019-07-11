@@ -4,7 +4,7 @@
 2. [introduction & practical work on test driven development with Python](https://github.com/ADGEfficiency/teaching-monolith/blob/master/test-driven-development/tdd.ipynb)
 3. [introduction & practical work on sklearn pipelines](https://github.com/ADGEfficiency/teaching-monolith/blob/master/test-driven-development/sklearn-pipelines.ipynb)
 4. [a short look at Hypothesis](https://github.com/ADGEfficiency/teaching-monolith/blob/master/test-driven-development/hypothesis.ipynb)
-5. we will then break free of the notebook (hooray!) and build a Python package from scratch - you can see my initial notes on [developing a Python package here](https://github.com/ADGEfficiency/teaching-monolith/blob/master/test-driven-development/python-packaging.md) and my [notes on Python testing tools](https://github.com/ADGEfficiency/programming-resources/blob/master/test-driven-development/pytest.md) will be useful.
+5. we will then break free of the notebook (hooray!) and build a Python package from scratch - you can see my initial notes on [developing a Python package here](https://github.com/ADGEfficiency/teaching-monolith/blob/master/test-driven-development/python-packaging.md) and my [notes on Python testing tools](https://github.com/ADGEfficiency/programming-resources/blob/master/test-driven-development/python-testing-tools.md) will be useful.
 
 - simple test train split
 - stratified test train split

@@ -1,6 +1,13 @@
 ## Lecture
 
-Backpropagation is introduced in the [intro-to-backprop notebook]().
+Backpropagation is introduced in the [intro-to-backprop notebook](https://github.com/ADGEfficiency/teaching-monolith/blob/master/backprop/intro-to-backprop.ipynb)
+
+During the lecture you will start to get an appreciation of hyperparameters used in neural networks
+- learning rate - used to scale the magnitude of the gradient update
+- batch size - the number of samples used to calculate gradients
+- weight initialization
+- choice of loss function
+- why gradient clipping & standardization is a best practice
 
 ## Practical
 

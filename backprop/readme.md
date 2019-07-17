@@ -1,6 +1,6 @@
 ## Lecture
 
-Backpropagation is introduced in the [intro-to-backprop notebook](https://github.com/ADGEfficiency/teaching-monolith/blob/master/backprop/intro-to-backprop.ipynb)
+Backpropagation is introduced in the [intro-to-backprop notebook](https://github.com/ADGEfficiency/teaching-monolith/blob/master/backprop/intro-to-backprop.ipynb).
 
 During the lecture you will start to get an appreciation of hyperparameters used in neural networks
 - learning rate - used to scale the magnitude of the gradient update
@@ -11,13 +11,14 @@ During the lecture you will start to get an appreciation of hyperparameters used
 
 ## Practical
 
-Examples of numpy neural networks are given in the [classification]() and [regression]() notebooks for single hidden layer neural networks.
+Examples of numpy neural networks are given in the [classification](https://github.com/ADGEfficiency/teaching-monolith/blob/master/backprop/classification.ipynb) and [regression](https://github.com/ADGEfficiency/teaching-monolith/blob/master/backprop/regression.ipynb) notebooks for single hidden layer neural networks.
 
 The practical for this class is to:
 - extend the neural nets to two hidden layers
 - extend the neural nets to n hidden layers
-- implement SGD
+- implement SGD (batching)
 - optimize the training (learning rate decay, early stopping etc)
+- gradient clipping
 
 ## Resources & further reading
 

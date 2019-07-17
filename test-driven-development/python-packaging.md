@@ -1,21 +1,16 @@
 ## What does a Python package need?
 
-### readme.md
+readme.md
 
+requirements.txt
 
-### requirements.txt
+.gitignore
 
+/tests
 
-### .gitignore
+setup.py
 
-
-### /tests
-
-
-### setup.py
-
-
-### __init__.py
+__init__.py
 
 
 ## What should a Python package not have?
@@ -27,12 +22,11 @@ DS_Stores
 
 ## Other nice to haves
 
-### Logging
+Logging
+
+Continuous integration
 
 
-### Continuous integration
-
-
-### A command line interface
+## A command line interface
 
 Click

@@ -49,7 +49,7 @@ These notes lean heavily on
 - median versus mean
 - ranking
 - average versus marginal
-- target distribution
+- Simpson's paradox
 - survivorship bias
 
 ---

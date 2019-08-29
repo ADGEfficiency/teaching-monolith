@@ -24,6 +24,8 @@ The practical for this class is to:
 
 [Tensorflow Neural Network Playground](https://playground.tensorflow.org/)
 
+[Yes you should understand backprop - Andrej Karpathy](https://medium.com/@karpathy/yes-you-should-understand-backprop-e2f06eab496b)
+
 ## Backprop theory
 
 [Calculus on Computational Graphs: Backpropagation](http://colah.github.io/posts/2015-08-Backprop/)

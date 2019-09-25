@@ -1,3 +1,5 @@
+Note - the Bash content here was used to build a superior Bash course - see it at [meiradania/bash-teaching-material](https://github.com/meiradania/bash-teaching-material).  The material here will still be updated, but the repo given above will receive more of my time.
+
 ## Bash
 
 1. [the UNIX philosophy](https://github.com/ADGEfficiency/programming-resources/blob/master/bash-and-unix/unix-philosophy.md)

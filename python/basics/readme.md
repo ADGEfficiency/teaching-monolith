@@ -1,9 +1,6 @@
 A series of notebooks designed to teach Python from the top down.  The notes are designed for students with no Python experience.
 
-If you are a complete beginner to programming it is recomended that you read programming & tools notebooks ***.
-
-TODO
-- dicts / hash tables
+## Further reading
 
 [My personal collection of Python resources](https://github.com/ADGEfficiency/programming-resources/tree/master/python)
 

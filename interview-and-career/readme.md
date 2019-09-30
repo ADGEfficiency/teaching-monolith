@@ -34,6 +34,34 @@ Must have web presence
 
 Easy for others to share & digest
 
+## Take home assignments
+
+https://interviewquery.us3.list-manage.com/track/click?u=e179136086ee9073d25fee018&id=9808c0f846&e=7136f95882
+
+Ask upfront for expectations and future feedback
+
+Ask questions and state assumptions
+
+Put in the baseline for modeling
+
+Data cleaning
+
+Minimal feature selection
+
+Impute missing values
+
+Create a classification pipeline
+
+Try training with a couple of sci-kit learn classifiers
+
+Tune hyperparameters with grid-search
+
+Make your code readable
+
+Write Tests and Comments
+
+Summarize your thought process in under 500 words!
+
 ## Resume
 
 http://creddle.io/
@@ -82,3 +110,7 @@ Unlike a resume, which is confined by length, a LinkedIn profile allows you to d
 [How to land a Data Scientist job at your dream company — My journey to Airbnb](https://towardsdatascience.com/how-to-land-a-data-scientist-job-at-your-dream-company-my-journey-to-airbnb-f6a1e99892e8)
 
 [The complete guide to hiring a data scientist](https://www.hackerearth.com/recruit/resources/e-books/hire-data-scientist/)
+
+[The Secret sauce to landing a data science role](https://www.reddit.com/r/datascience/comments/d9a3o1/the_secret_sauce_to_landing_a_data_science_role/)
+
+The skills listed are merely talking points. Your interviewer most likely understands that you aren't currently an expert at every skill they question. They are likely interviewing you until they get to skills you are unfamiliar with. How do you respond when you don't know something? Do you admit it, or do you try and cover your competency? Are you defensive or are you curious? **This is a continuous learning and feedback role.**

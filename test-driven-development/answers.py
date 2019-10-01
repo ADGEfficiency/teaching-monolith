@@ -1,4 +1,17 @@
 import numpy as np
+import pandas as pd
+
+
+def one_hot(data):
+    columns = sorted(set(data))
+
+    values = np.zeros((len(data), len(columns)))
+
+    for row, d in enumerate(data):
+        col = columns.index(d)
+        values[row, col] = 1
+        
+    return pd.DataFrame(values, columns=columns)
 
 
 def test_normalize():

@@ -3,3 +3,8 @@
 *.python-version
 sequences/logs/
 .python-version
+**__pycache__**
+statistics/data
+**todo.**
+python/top-down/dump.md
+python/top-down/**

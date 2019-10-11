@@ -103,6 +103,10 @@ Human inspired
 Humanized
 - self-conscious and self-aware
 
+## Two approaches
+
+![](assets/two-approach.png)
+
 ## AI approaches
 
 Statistical

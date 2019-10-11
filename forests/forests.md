@@ -34,7 +34,6 @@ Bread and butter of a data scientist
 
 - performance
 - no scaling of target or features required
-- no one-hot encoding
 - training can be parallelized
 - interpretable - feature importances
 
@@ -118,6 +117,19 @@ Need some way to measuring the quality of a split
 - entropy
 
 For regression, we measure impurity using squared deviations from the mean
+
+### Dealing with categorical variables
+
+One hot encode
+- curse of dimensionality makes dimensionality increase exponential
+- lose the explicit one columns relationship of the feature
+
+Label encode
+- `0, 1, 2, 3`
+- is an ordinal encoding - even if feature is not ordinal
+
+Mean encode
+- put the training data average for the target for that class
 
 ###  Decision trees hyperparameters
 
@@ -257,6 +269,10 @@ There are a few variants
 - gradient boosting
 - stochastic gradient boosting (using samples without replacement for each tree)
 
+## Example - teacher journey home length
+
+Your teacher estimates their travel time home by looking at the weather.  A student has access the data they don't (from Google Maps).  The student predicts the teacher will be 5 minutes slower.  The combination of these two prediction is the prediction of a gradient boosted ensemble of two people as base learners (equivalent to trees) using data from the weather and Google Maps (the features).
+
 ## Gradient boosted trees
 
 XGBoost + feature engineering = most Kaggle winners
@@ -308,6 +324,16 @@ Trees can be small, with just a few terminal nodes
 
 `max_depth`
 - control variance
+
+## Starting point hyperparameters
+
+Heard from a Kaggle Grandmaster
+
+Learning rate = 0.05, 1000 rounds, max depth = 3-5, subsample = 0.8-1.0, colsample_bytree = 0.3 - 0.8, lambda = 0 to 5
+
+Add capacity to combat bias - add rounds
+
+Reduce capacity to combat variance - depth / regularization
 
 ## How can sequential learning be parallelized?
 

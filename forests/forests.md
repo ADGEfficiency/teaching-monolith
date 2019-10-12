@@ -120,6 +120,10 @@ For regression, we measure impurity using squared deviations from the mean
 
 ### Dealing with categorical variables
 
+Decision trees sort the data based on the feature being split on
+- this makes the decision boundary meaningful
+- inherently ordinal
+
 One hot encode
 - curse of dimensionality makes dimensionality increase exponential
 - lose the explicit one columns relationship of the feature
@@ -130,6 +134,40 @@ Label encode
 
 Mean encode
 - put the training data average for the target for that class
+- could also use other statistics like median, quantiles or variance
+
+The code below will mean encode a categorical feature using the average of the target:
+
+```python
+def mean_encode(data, col, on):
+    group = data.groupby(col).mean()
+    mapper = {k: v for k, v in zip(group.index, group.loc[:, on].values)}
+
+    data.loc[:, col] = data.loc[:, col].replace(mapper)
+    data.loc[:, col].fillna(value=np.mean(data.loc[:, col]), inplace=True)
+
+    return data
+
+def test_mean_encoding():
+    store1 = pd.DataFrame(
+        {'store': ['A'] * 3,
+         'Sales': [100, 200, 300],
+         'noise': [0, 0, 0]}
+    )
+
+    store2 = pd.DataFrame(
+        {'store': ['B'] * 3,
+         'Sales': [10, 20, 30],
+         'noise': [0, 0, 0]}
+    )
+
+    data = pd.concat([store1, store2], axis=0)
+    data = mean_encode(data, col='store', on='Sales')
+    np.testing.assert_array_equal(
+			data.loc[:, 'store'],
+			np.array([200, 200, 200, 20, 20, 20])
+    )
+```
 
 ###  Decision trees hyperparameters
 
@@ -271,7 +309,9 @@ There are a few variants
 
 ## Example - teacher journey home length
 
-Your teacher estimates their travel time home by looking at the weather.  A student has access the data they don't (from Google Maps).  The student predicts the teacher will be 5 minutes slower.  The combination of these two prediction is the prediction of a gradient boosted ensemble of two people as base learners (equivalent to trees) using data from the weather and Google Maps (the features).
+Your teacher estimates their travel time home by looking at the weather.  A student has access the data they don't (from Google Maps).  The student predicts the teacher will be 5 minutes slower
+
+The combination of these two prediction is the prediction of a gradient boosted ensemble of two people as base learners (equivalent to trees) using data from the weather and Google Maps (the features).
 
 ## Gradient boosted trees
 
@@ -297,6 +337,12 @@ Optimization occurs in function (not parameter) space
 
 Trees can be small, with just a few terminal nodes
 - by fitting small trees, we slowly improve in areas where it doesn't perform well
+
+## Implementations
+
+- [XGBoost](https://xgboost.readthedocs.io/) - start here
+- [CatBoost](https://catboost.ai/) 
+- [LightGBM](https://lightgbm.readthedocs.io/en/latest/)
 
 ## Boosting hyperparameters
 
@@ -334,6 +380,13 @@ Learning rate = 0.05, 1000 rounds, max depth = 3-5, subsample = 0.8-1.0, colsamp
 Add capacity to combat bias - add rounds
 
 Reduce capacity to combat variance - depth / regularization
+
+Best in minicomp
+
+```json
+{'colsample_bytree': 0.7978421458577196, 'lambd': 2.5982975135904516, 'max_depth': 4, 'subsample': 0.8913639174845348, 'n_estimators': 500}
+```
+
 
 ## How can sequential learning be parallelized?
 

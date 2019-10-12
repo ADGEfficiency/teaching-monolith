@@ -8,6 +8,8 @@ These notes lean heavily on
 
 ## Course content
 
+[common.py]
+
 [intro.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/intro.ipynb)
 - IID
 - probability
@@ -42,7 +44,7 @@ These notes lean heavily on
 - base rate fallacy
 - multiple comparisons
 
-[ab-testing.ipynb]
+[bandits.ipynb]
 
 [central-limit-theorem.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/central-limit-theorem.ipynb)
 
@@ -54,10 +56,3 @@ These notes lean heavily on
 - cross-entropy
 - Kullback-Leibler divergence
 - softmax 
-
-[mental-models.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/mental-models.ipynb)
-
----
-A conscious decision was made to refactor out common code into `common.py`, rather than duplicate function definitions between notebooks
-- this hurts notebook readability
-- but demonstrates a software engineering best practice 

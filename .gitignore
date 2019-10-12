@@ -1,5 +1,6 @@
 .hypothesis
 .ipynb_checkpoints
+**pycache**
 *.python-version
 sequences/logs/
 .python-version

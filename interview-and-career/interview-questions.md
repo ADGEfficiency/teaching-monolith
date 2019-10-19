@@ -13,6 +13,8 @@ What is a confusion matrix?
 
 Explain how a ROC curve works.
 
+Explain L1 and L2 regularisation.
+
 What is selection bias?
 - aka sampling bias = samples having different probabilities than others
 - non iid

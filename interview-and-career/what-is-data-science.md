@@ -84,6 +84,7 @@ A contrast to the natural intelligence displayed by humans
 Intelligence 
 - learning, problem solving
 - competence versus comprehension
+- prediction & explainability
 
 ## What is the AI effect?
 

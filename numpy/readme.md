@@ -1,6 +1,13 @@
-Chapter 2 of Deep Learning
+# NumPy course
 
-https://docs.google.com/document/d/1gORQO0T7cbkf_jpE_9wplDlTtAQ7SgZHSbLWqUjcLqI/edit
+A one day course introducing NumPy and linear algebra.  The course is split into three notebooks:
+1. [vector.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/numpy/1.vector.ipynb) - single dimension arrays
+2. [matrix.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/numpy/2.matrix.ipynb) - two dimensional arrays
+3. [tensor.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/numpy/3.tensor.ipynb) - n dimensional arrays
+
+## Resources & further reading
+
+Chapter 2 of [Deep Learning - Ian Goodfellow, Yoshua Bengio and Aaron Courville](https://www.deeplearningbook.org/).
 
 [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
 
@@ -8,11 +15,6 @@ https://docs.google.com/document/d/1gORQO0T7cbkf_jpE_9wplDlTtAQ7SgZHSbLWqUjcLqI/
 
 [Understanding the internals of NumPy to avoid unnecessary array copying](https://ipython-books.github.io/45-understanding-the-internals-of-numpy-to-avoid-unnecessary-array-copying/)
 
-(http://scipy-lectures.org/advanced/advanced_numpy/)
-
-(http://scipy-lectures.org/intro/numpy/index.html)
-
-Exercises to do in the future:
-- fast fourier transform
-- pca
-- svd
+Scipy lectures
+- [1.3. NumPy: creating and manipulating numerical data](http://scipy-lectures.org/intro/numpy/index.html)
+ - [2.2. Advanced NumPy](http://scipy-lectures.org/advanced/advanced_numpy/)

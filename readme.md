@@ -4,4 +4,6 @@ The materials are optimized for in person training.
 
 ![](assets/monolith.png)
 
-This repository is built and maintained by Adam Green - [adam.green@adgefficiency.com](adam.green@adgefficiency.com).  I blog about energy, data science and machine learning at [adgefficiency.com](https://adgefficiency.com/).
+This repository is built and maintained by Adam Green - [adam.green@adgefficiency.com](adam.green@adgefficiency.com).
+
+I blog about energy, data science and machine learning at [adgefficiency.com](https://adgefficiency.com/).

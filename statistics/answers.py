@@ -1,3 +1,5 @@
+import math
+
 import numpy as np
 from scipy.stats import entropy as entropy_from_probs
 
@@ -51,3 +53,45 @@ def entropy_from_classes(y):
     probs = [sum(y == i) / len(y) for i in set(y)]
     np.testing.assert_allclose(sum(probs), 1)
     return entropy_from_probs(probs)
+
+
+def expectation(results):
+    return {arm: np.mean(data) for arm, data in results.items()}
+
+
+def cross_entropy_from_probs(p, q):
+    epsilon = 1e-16
+    return sum([-tr * math.log(est + epsilon, 2) for tr, est in zip(p, q)])
+
+
+def ucb(results, step, c):
+    return {
+        arm: np.mean(data)+ c * np.sqrt(np.log(step)/len(data))
+        for arm, data in results.items()
+    }
+
+
+def run_ucb_expt(c=5):
+
+    results = {
+        arm: list(np.random.normal(*stats))
+        for arm, stats in params.items()
+    }
+
+    steps = 1000
+    values = np.zeros((steps, len(choices)))
+    actions = np.empty((steps)).astype(str)
+    ucb_performance = np.zeros(steps)
+
+    for step in range(steps):
+        ucbs = ucb(results, 2, c)
+
+        action = max(ucbs, key=ucbs.get)
+        actions[step] = action
+        values[step, :] = list(ucbs.values())
+
+        p = params[action]
+        results[action].append(float(np.random.normal(p.loc, p.scale, 1)))
+        ucb_performance[step] = get_performance(results)
+        
+    return ucb_performance

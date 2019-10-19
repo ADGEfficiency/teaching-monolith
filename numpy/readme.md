@@ -7,7 +7,7 @@ A one day course introducing NumPy and linear algebra.  The course is split into
 
 ## Resources & further reading
 
-Chapter 2 of [Deep Learning - Ian Goodfellow, Yoshua Bengio and Aaron Courville](https://www.deeplearningbook.org/).
+Chapter 2 of [Deep Learning - Ian Goodfellow, Yoshua Bengio and Aaron Courville](https://www.deeplearningbook.org/)
 
 [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
 
@@ -15,6 +15,6 @@ Chapter 2 of [Deep Learning - Ian Goodfellow, Yoshua Bengio and Aaron Courville]
 
 [Understanding the internals of NumPy to avoid unnecessary array copying](https://ipython-books.github.io/45-understanding-the-internals-of-numpy-to-avoid-unnecessary-array-copying/)
 
-Scipy lectures
+Scipy lectures:
 - [1.3. NumPy: creating and manipulating numerical data](http://scipy-lectures.org/intro/numpy/index.html)
  - [2.2. Advanced NumPy](http://scipy-lectures.org/advanced/advanced_numpy/)

@@ -59,3 +59,23 @@ def percentile(rank, samples):
 def make_cdf(samples):
     samples = sorted(samples)
     return [(percentile_rank(s, samples), s) for s in sorted(samples)]
+
+
+def generate_bandit_dataset():
+    np.random.seed(42)
+
+    Param = namedtuple('Parameter', ['loc', 'scale', 'initial_size'])
+    start = 10
+    end = 50
+    num_options = 20
+
+    params = {
+        str(option): Param(loc, scale, 2) 
+        for option, (loc, scale) 
+        in enumerate(zip(np.linspace(start, end, num_options), np.random.uniform(10, size=num_options)))
+    }
+
+    return params, {
+        arm: list(np.random.normal(*stats))
+        for arm, stats in params.items()
+    }

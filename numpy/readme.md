@@ -1,5 +1,7 @@
 # NumPy course
 
+<img src="assets/reddit.png" alt="" width="600"/>
+
 A one day course introducing NumPy and linear algebra.  The course is split into three notebooks:
 1. [vector.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/numpy/1.vector.ipynb) - single dimension arrays
 2. [matrix.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/numpy/2.matrix.ipynb) - two dimensional arrays

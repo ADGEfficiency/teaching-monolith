@@ -1,6 +1,6 @@
 # Backpropagation
 
-![](assets/reddit.png)
+<img src="assets/reddit.png" alt="" width="600"/>
 
 ## Lecture
 

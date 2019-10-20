@@ -1,3 +1,7 @@
+# Backpropagation
+
+![](assets/reddit.png)
+
 ## Lecture
 
 Backpropagation is introduced in the [intro-to-backprop notebook](https://github.com/ADGEfficiency/teaching-monolith/blob/master/backprop/intro-to-backprop.ipynb).

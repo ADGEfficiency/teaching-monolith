@@ -1,4 +1,4 @@
-# NumPy course
+# NumPy
 
 <img src="assets/reddit.png" alt="" width="800"/>
 

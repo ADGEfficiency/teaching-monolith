@@ -1,6 +1,6 @@
 # Backpropagation
 
-<img src="assets/reddit.png" alt="" width="600"/>
+<img src="assets/reddit.png" alt="" width="800"/>
 
 ## Lecture
 
@@ -35,6 +35,8 @@ The practical for this class is to:
 [Calculus on Computational Graphs: Backpropagation](http://colah.github.io/posts/2015-08-Backprop/)
 
 [CS231n - Backprop](http://cs231n.github.io/optimization-2/)
+
+[Derivatives, Backpropagation, and Vectorization - Justin Johnson - 2017](http://cs231n.stanford.edu/handouts/derivatives.pdf)
 
 ## Classification neural net from scratch
 

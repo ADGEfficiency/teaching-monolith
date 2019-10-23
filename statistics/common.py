@@ -22,6 +22,7 @@ def load_iris():
     print('target.shape = {}'.format(target.shape))
     return Data(features, target, pd.DataFrame(dataset.target, columns=['class']))
 
+
 def load_forest_fires():
     os.makedirs('./data', exist_ok=True)
 
@@ -61,16 +62,16 @@ def make_cdf(samples):
     return [(percentile_rank(s, samples), s) for s in sorted(samples)]
 
 
-def generate_bandit_dataset():
+def generate_bandit_dataset(arms=20, samples=2):
     np.random.seed(42)
 
     Param = namedtuple('Parameter', ['loc', 'scale', 'initial_size'])
     start = 10
     end = 50
-    num_options = 20
+    num_options = arms
 
     params = {
-        str(option): Param(loc, scale, 2) 
+        str(option): Param(loc, scale, samples) 
         for option, (loc, scale) 
         in enumerate(zip(np.linspace(start, end, num_options), np.random.uniform(10, size=num_options)))
     }

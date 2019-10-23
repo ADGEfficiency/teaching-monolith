@@ -1,4 +1,4 @@
-A series of notebooks designed to teach Python from the top down.  The notes are designed for students with no Python experience.
+A series of notebooks designed to teach Python from the bottom up.  The notes are designed for students with no Python experience.
 
 ## Further reading
 

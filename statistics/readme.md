@@ -1,6 +1,6 @@
 # Statistics
 
-These notes lean heavily on
+These notes are built using
 - [Statistics Done Wrong - Alex Reinhart](https://www.statisticsdonewrong.com/)
 - [Think Stats 2nd Edition - Allen B. Downey](https://greenteapress.com/wp/think-stats-2e/)
 - [Practical Statistics for Data Scientists - Bruce & Bruce](https://www.oreilly.com/library/view/practical-statistics-for/9781491952955/)
@@ -9,13 +9,9 @@ These notes lean heavily on
 - [Visual Information Theory - colah's blog](https://colah.github.io/posts/2015-09-Visual-Information/)
 - [Sutton & Barto - Reinforcement Learning: An Introduction](http://incompleteideas.net/book/RLbook2018.pdf)
 
-I thank all the authors above!
+I reccomend all the resources above and thank all the authors for their excellent contributions to the world.
 
 ## Course content
-
-[answers.py]
-
-[common.py]
 
 [intro.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/intro.ipynb)
 - IID
@@ -70,3 +66,11 @@ I thank all the authors above!
 - cross-entropy
 - Kullback-Leibler divergence
 - softmax 
+
+[answers.py](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/answers.py)
+- for completeness
+-` import answers`
+
+[common.py](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/intro.ipynb)
+- code shared between notebooks
+- a best practice - often the result of a first refactor

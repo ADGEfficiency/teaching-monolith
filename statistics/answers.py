@@ -1,6 +1,8 @@
 import math
 
 import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
 from scipy.stats import entropy as entropy_from_probs
 
 

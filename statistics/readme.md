@@ -57,6 +57,9 @@ I reccomend all the resources above and thank all the authors for their excellen
 [central-limit-theorem.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/central-limit-theorem.ipynb)
 - why we can use Gaussians all the time
 
+[introspection-paradox.ipynb]
+- why your train is always full
+
 [complexity.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/complexity.ipynb)
 - how code slows as data grows
 

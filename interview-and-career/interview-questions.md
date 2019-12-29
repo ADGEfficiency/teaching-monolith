@@ -1,7 +1,20 @@
-[Some from here](https://www.hackerearth.com/recruit/resources/e-books/hire-data-scientist/)
-
 - business context
 - not simple or easy
+
+## p-values
+
+If you perform a statistical test and get a p-value of 0.01.
+
+Based on this, decide whether each of the following statements is true or false: 
+
+- you have absolutely disproved the null hypothesis (“There is no difference between means”). 
+- there is a 1% probability that the null hypothesis is true. 
+- you have absolutely proved the alternative hypothesis (“There is a difference between means”). 
+- you can deduce the probability that the alternative hypothesis is true. 
+- you know, if you decide to reject the null hypothesis, the probability that you are making the wrong decision. 
+- you have a reliable experimental finding, in the sense that if your experiment were repeated many times, you would obtain a significant result in 99% of trials.
+
+What is your favourite loss function?
 
 What is the difference between supervised and unsupervised machine learning?
 
@@ -63,6 +76,88 @@ What are recommender systems?
 
 What is the difference between regression and classification?
 
+bias, variance, capacity
+- bias = different between expected & true
+- variance = variability of prediction
+- capacity = ability for model to understand cowplex relationships between variables
+
+regression metrics
+- mse = variance + bias squared
+
+classisification metrics
+
+cross validation
+- testing
+- unseen data
+
+how PCA works
+- saving compute
+- removes noise -> reduces variance
+- wouldn't use of your features are from very different sources
+
+L1 vs L2 regularization
+
+How to deal with imbalanced classes
+
+How to deal with missing values
+- drop rows
+- drop columns
+- fill in with simple stats
+- use another model to predict
+
+what would you do with a multi modal target
+
+feature importances
+- trees - relative importance / infomation gain
+
+advantages of rf
+
+what is machine learning
+- super
+- unsuper
+- deep
+
+## shorter form questions
+
+R2 as a metric
+- variance explained by the regression / total variance
+- the more predictors you add the higher R^2 becomes.  hence use adjusted R^2 which adjusts for the degrees of freedom 
+
+heteroskedasticity
+- errors being higher or lower at different ranges of the target
+
+cardinality
+
+Curse of dimensionality
+
+Co-lineraity
+
+Ensembling
+
+bagging
+- averages out enstable learning algorithms
+
+boosting
+- reweights examples near the decision edge (the margin)
+
+normal dist
+- mean == mode == median
+
+what is standard normal
+- mean=0, std=1
+
+what is IQR
+- interquartile range
+- 25 vs 75 percentiles
+
+parametric or non-parametric
+- lasso
+- svm
+- rf
+- ff
+- conv
+- lstm
+
 
 ---
 
@@ -100,3 +195,11 @@ Given uniform distributions X and Y and the mean 0 and standard deviation 1 for 
 There are four people in an elevator and four floors in a building. What’s the probability that each person gets off on a different floor?
 What’s the probability that two people get off on the same floor?
 Given a deck of cards labeled from 1 to 100, what’s the probability of getting Pick 1 < Pick2 < Pick3?
+
+## Five Interview Questions to Predict a Good Data Scientist - [medium](https://medium.com/predict/five-interview-questions-to-predict-a-good-data-scientist-40d310cdcd68)
+
+Significance of the normal distribution
+- Central Limit Theorem
+- mean, medium and mode are all the same
+- entire distribution can be specified by two paraemters (mean and variance)
+- importance for linear regression

@@ -4,7 +4,7 @@ Note - the Bash content here was used to build a superior Bash course - see it a
 
 1. [the UNIX philosophy](https://github.com/ADGEfficiency/programming-resources/blob/master/bash-and-unix/unix-philosophy.md)
 2. [introductory Bash notes](https://github.com/ADGEfficiency/programming-resources/blob/master/bash-and-unix/intro.md)
-3. a short introduction on how to quit Vim (run `vimtutor` in your terminal for more - also see [my vim notes](https://github.com/ADGEfficiency/programming-resources/tree/master/vim)
+3. a short introduction on how to quit Vim (run `vimtutor` in your terminal for more - also see [my vim notes](https://github.com/ADGEfficiency/programming-resources/tree/master/vim) for more
 4. the [DataCamp Introduction to Shell for Data Science - Datacamp Course](https://www.datacamp.com/courses/introduction-to-shell-for-data-science) for more practice using Bash
 
 

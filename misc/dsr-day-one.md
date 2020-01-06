@@ -1,7 +1,7 @@
 ## Morning
 
 House rules
-- you don’t have to show up, but it makes sense
+- you don't have to show up, but it makes sense
 - if you show up, please show up on time, otherwise it is interrupting the teacher and the students as well
 - let us know if you are going to be late
 - kitchen - shut the door with smelly food
@@ -10,16 +10,16 @@ House rules
 
 Course management
 - weekend classes
+- one or two classes will change (sickness etc) - we just don't know which one!
 - Slack & Google Calendar
 - feedback form
 
 Where to get information about data science & machine learning
-- [data is beautiful](https://www.reddit.com/r/dataisbeautiful/) reddit
-- [Towards Data Science](https://towardsdatascience.com/)
+- Reddit - [data is beautiful](https://www.reddit.com/r/dataisbeautiful/), Machine Learning, Data Science, Reinforcement Learning
+- Medium - [Towards Data Science](https://towardsdatascience.com/)
 - Hacker News
-- Reddit Machine Learning
 
-Course outline
+Course outline / stack of a data scientist
 
 Introductions
 - education
@@ -60,26 +60,21 @@ How to choose a project?
 What are data science, machine learning and AI?
 - [decade of deep learning](https://leogao.dev/2019/12/31/The-Decade-of-Deep-Learning/)
 
-Get to know each other through CV review
-- http://creddle.io/
+Why is TensorFlow free?
 
-How to structure a data science team?
-- what is in the stack?
-- full stack versus specialist in data science
+## Get to know each other through CV review
+
+[creddle](http://creddle.io/) is useful for creating CVs
 
 ## Writing blog posts
 
 Your career progress is more about how you present your work, than the work itself
 
 Blog = asynchronous, more technical detail, can be updated are re-editied
-
-Expectation of students is
-- one technical blog post (cross entropy etc)
+- technical blog post (cross entropy etc)
 - blog post on the project
 - my popular posts are beginner ones - this is also easiest for you to write
-- tell the story of what you did wrong
-
-Gold standard - [Journey from academic paper to industry usage - Merantix](https://medium.com/merantix/journey-from-academic-paper-to-industry-usage-cf57fe598f31)
+- tell the story of what you did wrong ([Journey from academic paper to industry usage - Merantix](https://medium.com/merantix/journey-from-academic-paper-to-industry-usage-cf57fe598f31))
 
 [Hemingway Editor](http://www.hemingwayapp.com/) is great for improving your drafts
 

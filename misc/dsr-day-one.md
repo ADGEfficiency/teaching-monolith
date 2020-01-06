@@ -15,7 +15,7 @@ Course management
 - feedback form
 
 Where to get information about data science & machine learning
-- Reddit - [data is beautiful](https://www.reddit.com/r/dataisbeautiful/), Machine Learning, Data Science, Reinforcement Learning
+- Reddit - data is beautiful, Machine Learning, Data Science, Reinforcement Learning
 - Medium - [Towards Data Science](https://towardsdatascience.com/)
 - Hacker News
 
@@ -25,6 +25,9 @@ Introductions
 - education
 - experience
 - motivations to be at DSR
+
+Meetups in Berlin
+- Berlin Machine Learning Group
 
 Become teachers
 
@@ -67,6 +70,8 @@ Why is TensorFlow free?
 [creddle](http://creddle.io/) is useful for creating CVs
 
 ## Writing blog posts
+
+[My blog](https://adgefficiency.com/)
 
 Your career progress is more about how you present your work, than the work itself
 

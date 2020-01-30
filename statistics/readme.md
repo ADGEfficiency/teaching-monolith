@@ -18,7 +18,6 @@ I reccomend all the resources above and thank all the authors for their excellen
 - probability
 - median versus mean
 - ranking
-- average versus marginal
 - Simpson's paradox
 - survivorship bias
 - pseudoreplication

@@ -23,7 +23,7 @@ def central_limit():
 
     f, axes = plt.subplots(ncols=int(num_plots/nrows), nrows=nrows, figsize=(25, 10))
     means = []
-    for num, ax in enumerate(axes.flatten()):  
+    for num, ax in enumerate(axes.flatten()):
         me = sample_means(freq)
 
         s = []
@@ -43,14 +43,14 @@ def distributions():
     f = plt.hist(data)
     _ = plt.ylabel('frequency')
     _ = plt.xlabel(name)
-    
+
     percentile(0.25, data)
     percentile(0.75, data)
-    
+
     rank = percentile_rank(10, data)
     percentile(rank, raw.loc[:, 'wind'])
 
-    
+
 def entropy_from_classes(y):
     probs = [sum(y == i) / len(y) for i in set(y)]
     np.testing.assert_allclose(sum(probs), 1)
@@ -66,6 +66,40 @@ def cross_entropy_from_probs(p, q):
     return sum([-tr * math.log(est + epsilon, 2) for tr, est in zip(p, q)])
 
 
+def run_bandit(eps, params, steps=5000):
+    print('bandit {}'.format(eps))
+    results = {
+        arm: list(np.random.normal(*stats))
+        for arm, stats in params.items()
+    }
+
+    choices = list(params.keys())
+
+    values = np.zeros((steps, len(choices)))
+    actions = np.empty((steps)).astype(str)
+    eps_performance = np.zeros(steps)
+
+    for step in range(steps):
+        prob = np.random.rand()
+        if prob < eps:
+            strat = 'random'
+            action = np.random.choice(choices)
+
+        else:
+            strat = 'greedy'
+            expectations = expectation(results)
+            values[step, :] = list(expectations.values())
+            action = max(expectations, key=expectations.get)
+
+        actions[step] = action
+
+        p = params[action]
+        results[action].append(float(np.random.normal(p.loc, p.scale, 1)))
+        eps_performance[step] = get_performance(results)
+
+    return eps_performance
+
+
 def ucb(results, step, c):
     return {
         arm: np.mean(data)+ c * np.sqrt(np.log(step)/len(data))
@@ -73,15 +107,23 @@ def ucb(results, step, c):
     }
 
 
-def run_ucb_expt(c=5):
+def get_performance(results):
+    d = []
+    for arm, data in results.items():
+        d.extend(data)
+    return np.mean(d)
+
+
+def run_ucb_expt(c, params):
+    print('running UCB')
 
     results = {
         arm: list(np.random.normal(*stats))
         for arm, stats in params.items()
     }
 
-    steps = 1000
-    values = np.zeros((steps, len(choices)))
+    steps = 5000
+    values = np.zeros((steps, len(params.values())))
     actions = np.empty((steps)).astype(str)
     ucb_performance = np.zeros(steps)
 
@@ -95,5 +137,41 @@ def run_ucb_expt(c=5):
         p = params[action]
         results[action].append(float(np.random.normal(p.loc, p.scale, 1)))
         ucb_performance[step] = get_performance(results)
-        
+
     return ucb_performance
+
+
+def fair_coin_hypothesis_test(data, test_statistic, null_hypothesis):
+    observed = test_statistic(data)
+
+    test_stats = []
+    for expt in range(len(data)):
+        data = null_hypothesis(len(data))
+        test_stats.append(test_statistic(data))
+
+    test_stats = np.array(test_stats)
+    p_val = sum(test_stats > observed) / test_stats.shape[0]
+
+    print('If the null hypothesis is true, we expect to see the effect of {} {} % of the time'.format(
+        observed, p_val*100))
+    return p_val
+
+
+def test_means(observed, expected):
+    return abs(np.mean(observed) - np.mean(expected))
+
+
+def run_shuffle(pool):
+    mask = np.random.randint(0, 2, size=pool.shape[0]).astype(bool)
+    return pool[mask], pool[~mask]
+
+
+def flower_mean_hypothesis(first, second, iters=1000):
+    observed = test_means(first, second)
+    pool = np.concatenate([first, second])
+    test_stats = np.array([
+        test_means(*run_shuffle(pool)) for _ in range(iters)
+    ])
+    p_val = sum(test_stats > observed) / test_stats.shape[0]
+    return p_val, test_stats
+

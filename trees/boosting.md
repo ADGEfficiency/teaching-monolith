@@ -1,6 +1,6 @@
 # Boosting
 
-Boosting = leaning models in series (sequentially) to minimize error of previous models
+Boosting = learning models in series (sequentially) to minimize error of previous models
 
 There are a few variants
 - AdaBoost (1995)

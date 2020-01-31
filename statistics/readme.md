@@ -1,6 +1,6 @@
 # Statistics
 
-These notes are built using
+These notes are built material from
 - [Statistics Done Wrong - Alex Reinhart](https://www.statisticsdonewrong.com/)
 - [Think Stats 2nd Edition - Allen B. Downey](https://greenteapress.com/wp/think-stats-2e/)
 - [Practical Statistics for Data Scientists - Bruce & Bruce](https://www.oreilly.com/library/view/practical-statistics-for/9781491952955/)
@@ -9,7 +9,7 @@ These notes are built using
 - [Visual Information Theory - colah's blog](https://colah.github.io/posts/2015-09-Visual-Information/)
 - [Sutton & Barto - Reinforcement Learning: An Introduction](http://incompleteideas.net/book/RLbook2018.pdf)
 
-I reccomend all the resources above and thank all the authors for their excellent contributions to the world.
+I recommend all the resources above and thank all the authors for their excellent contributions.
 
 ## Course content
 
@@ -46,7 +46,7 @@ I reccomend all the resources above and thank all the authors for their excellen
 - base rate fallacy
 - multiple comparisons
 
-[bandits.ipynb]
+[bandits.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/bandits.ipynb)
 - reinforcement learning context
 - exploration versus exploitation
 - multi-armed bandit
@@ -56,7 +56,7 @@ I reccomend all the resources above and thank all the authors for their excellen
 [central-limit-theorem.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/central-limit-theorem.ipynb)
 - why we can use Gaussians all the time
 
-[introspection-paradox.ipynb]
+[introspection-paradox.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/introspection-paradox.ipynb)
 - why your train is always full
 
 [complexity.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/complexity.ipynb)
@@ -75,4 +75,4 @@ I reccomend all the resources above and thank all the authors for their excellen
 
 [common.py](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/intro.ipynb)
 - code shared between notebooks
-- a best practice - often the result of a first refactor
+- the result of a refactor :):

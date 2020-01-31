@@ -1,5 +1,9 @@
 ## Morning
 
+Zulip is dead (not working)
+- moved to Slack
+- reason = last batch never used it!
+
 House rules
 - you don't have to show up, but it makes sense
 - if you show up, please show up on time, otherwise it is interrupting the teacher and the students as well
@@ -73,7 +77,9 @@ Why is TensorFlow free?
 
 [My blog](https://adgefficiency.com/)
 
-Your career progress is more about how you present your work, than the work itself
+> If you write about your passion, you will never lose enthusiasm because you are creating a little corner of the internet that’s yours, you made it, you made it beautiful, and now it’s also available for everyone else, but even if no one shows up, it stands on its own.
+
+> Your career progress is more about how you present your work, than the work itself
 
 Blog = asynchronous, more technical detail, can be updated are re-editied
 - technical blog post (cross entropy etc)

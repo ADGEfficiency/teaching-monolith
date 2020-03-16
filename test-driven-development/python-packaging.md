@@ -19,6 +19,8 @@ DS_Stores
 
 .ipynb_checkpoints
 
+data
+
 
 ## Other nice to haves
 

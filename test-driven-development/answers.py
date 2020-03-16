@@ -31,7 +31,7 @@ def normalize(arr):
 
 
 def test_standardizer():
-    data = np.random.uniform(size=20).reshape((10, 2)) * 100
+    data = np.random.uniform(size=20).reshape((10, 1, 2)) * 100
     standardized = standardizer(data)
     np.testing.assert_array_less(np.mean(standardized, axis=0), 1e-14)
     np.testing.assert_allclose(np.var(standardized, axis=0), 1)

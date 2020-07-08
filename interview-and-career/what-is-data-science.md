@@ -16,6 +16,9 @@ Provide business intelligence - data communication
 
 Drive product decisions
 
+Learn & developing new business capabilities
+- optimizing for productivity makes sense when you know what to build - in data science this isn't true!  
+
 ## Business, analytics, engineering
 
 [DSR curriculum](https://datascienceretreat.com/curriculum/) is built into these three.
@@ -182,3 +185,57 @@ Why is ML working today?
 - we are the product
 - branding
 - compute
+
+## Why is Tensorflow free?
+
+Eaiser integration with Google Cloud
+- platform owner
+
+Product quality
+
+Branding
+- talent
+
+Free labour
+- dev, bug
+
+
+---
+
+Learn & developing new business capabilities
+- optimizing for productivity makes sense when you know what to build - in data science this isn't true!  
+
+## Skillset of a data scientist
+
+1. Theory (linear algebra, statistics, optimization, algorithms, methodology, modeling of complex systems…)
+2. Engineering (end-to-end software development, hardware knowledge depending on the application, project management)
+3. Domain Expertise (deep understanding of your chosen field's dynamics and trends)
+4. Communication (writing, design, presentation, sales, stakeholder management, collaboration)
+
+Most people I've met that fit the above description are extremely fast learners and insanely curious about other people and the world. There's no single course or professional experience that will teach you everything, so a data scientist needs to be an active protagonist of their own learning journey.
+
+## The full stack data scientist - myth?
+
+## Importance of visualization
+
+Be aware of some graphic design principles
+
+## What do data scientists need
+
+Full stack data scientists require well constructed data platform
+- containerization, distributed processing, automatic failover
+- hooks into experimentation structure, scaling, visualizing debugging output
+
+## Model selection
+
+Model selection process as having different levels of maturity
+
+- initially choose models we are familiar with
+- then choose based on performance, understanding tradeoffs, what works best on small/large datasets
+- after seeing model implemented, then start to select based on long term costs & benefits (computation, disk space, volatility, maintenance)
+
+## Further reading
+
+[Beware the data science pin factory: The power of the full-stack data science generalist and the perils of division of labor through function](https://multithreaded.stitchfix.com/blog/2019/03/11/FullStackDS-Generalists/)
+
+What is the most difficult to find attribute in a good data scientist? - [quora](https://www.quora.com/What-is-the-most-difficult-to-find-attribute-in-a-good-data-scientist)

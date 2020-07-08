@@ -76,19 +76,8 @@ What are recommender systems?
 
 What is the difference between regression and classification?
 
-bias, variance, capacity
-- bias = different between expected & true
-- variance = variability of prediction
-- capacity = ability for model to understand cowplex relationships between variables
-
 regression metrics
-- mse = variance + bias squared
-
-classisification metrics
-
-cross validation
-- testing
-- unseen data
+- 
 
 how PCA works
 - saving compute
@@ -108,55 +97,51 @@ How to deal with missing values
 what would you do with a multi modal target
 
 feature importances
-- trees - relative importance / infomation gain
-
-advantages of rf
-
-what is machine learning
-- super
-- unsuper
-- deep
 
 ## shorter form questions
 
-R2 as a metric
-- variance explained by the regression / total variance
-- the more predictors you add the higher R^2 becomes.  hence use adjusted R^2 which adjusts for the degrees of freedom 
+---
 
-heteroskedasticity
-- errors being higher or lower at different ranges of the target
+Linear independence
 
-cardinality
+Determinant
 
-Curse of dimensionality
+Eigenvalues and Eigenvectors
 
-Co-lineraity
+SVD
 
-Ensembling
+The norm of a vector
 
-bagging
-- averages out enstable learning algorithms
+Independent random variables
 
-boosting
-- reweights examples near the decision edge (the margin)
+Expectation and variance
 
-normal dist
-- mean == mode == median
 
-what is standard normal
-- mean=0, std=1
+Entropy, what it means intuitively, formula
 
-what is IQR
-- interquartile range
-- 25 vs 75 percentiles
+KL divergence, other divergences
 
-parametric or non-parametric
-- lasso
-- svm
-- rf
-- ff
-- conv
-- lstm
+Kolmogorov complexity
+
+Jacobian and Hessian
+
+Gradient descent and SGD
+
+Other optimization methods
+
+NN with 1k params - what’s dimensionality of a gradient and hessian
+
+What is SVM, linear vs non-linear SVM
+
+Quadratic optimization
+
+NN overfits - what to do
+
+What is autoencoder
+
+How to train an RNN
+
+Favorite ML algorithm - tell about it in details
 
 
 ---
@@ -203,3 +188,15 @@ Significance of the normal distribution
 - mean, medium and mode are all the same
 - entire distribution can be specified by two paraemters (mean and variance)
 - importance for linear regression
+
+---
+
+what is linear regression
+
+what is overfitting
+
+what is the ROC curve
+
+what is rf
+
+rf vs boosting

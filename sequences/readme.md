@@ -19,3 +19,5 @@
 [Visualizing memorization in RNNs](https://distill.pub/2019/memorization-in-rnns/)
 
 [When Recurrent Models Don't Need to be Recurrent](https://bair.berkeley.edu/blog/2018/08/06/recurrent/)
+
+[Recurrent Neural Networks (RNN) and Long Short-Term Memory (LSTM) - Brandon Rohrer - YouTube](https://youtu.be/WCUNPb-5EYI)

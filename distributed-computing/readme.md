@@ -392,7 +392,7 @@ Reducer
 - works on data that all has the same key or
 - order of combining doesn't matter 
 
-[map-reduce.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/map-reduce.ipynb)
+[mapreduce.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/mapreduce.ipynb)
 
 
 ## Multiple machine computation in Python

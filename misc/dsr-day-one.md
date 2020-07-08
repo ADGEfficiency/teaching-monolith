@@ -1,9 +1,5 @@
 ## Morning
 
-Zulip is dead (not working)
-- moved to Slack
-- reason = last batch never used it!
-
 House rules
 - you don't have to show up, but it makes sense
 - if you show up, please show up on time, otherwise it is interrupting the teacher and the students as well
@@ -16,14 +12,20 @@ Course management
 - weekend classes
 - one or two classes will change (sickness etc) - we just don't know which one!
 - Slack & Google Calendar
-- feedback form
+- [feedback form](https://docs.google.com/forms/d/e/1FAIpQLSdKHpElzYPwoiGsECPC62ALh_RzADgHv8qO8tMR6aXztbUUeQ/viewform)
 
 Where to get information about data science & machine learning
 - Reddit - data is beautiful, Machine Learning, Data Science, Reinforcement Learning
 - Medium - [Towards Data Science](https://towardsdatascience.com/)
 - Hacker News
+- textbooks - Deep Learning, Pattern Recognition (Bishop), Statistical Learning (Hastie)
 
-Course outline / stack of a data scientist
+Course outline - go through the calendar
+
+Stack of a data scientist
+
+Types of data
+- tabular, text, images, time series
 
 Introductions
 - education
@@ -87,6 +89,8 @@ Blog = asynchronous, more technical detail, can be updated are re-editied
 - my popular posts are beginner ones - this is also easiest for you to write
 - tell the story of what you did wrong ([Journey from academic paper to industry usage - Merantix](https://medium.com/merantix/journey-from-academic-paper-to-industry-usage-cf57fe598f31))
 
+[Sell yourself, Sell Your Work ...](https://www.solipsys.co.uk/new/SellYourselfSellYourWork.html)
+
 [Hemingway Editor](http://www.hemingwayapp.com/) is great for improving your drafts
 
 ## Afternoon
@@ -96,3 +100,5 @@ Blog = asynchronous, more technical detail, can be updated are re-editied
 [Computers](https://github.com/ADGEfficiency/programming-resources/blob/master/computers.md)
 
 [Tools](https://github.com/ADGEfficiency/teaching-monolith/tree/master/misc/tools.ipynb)
+
+Get setup on conda, setup two virtual environments (one called DSR, one called general)

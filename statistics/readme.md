@@ -71,8 +71,7 @@ I recommend all the resources above and thank all the authors for their excellen
 
 [answers.py](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/answers.py)
 - for completeness
--` import answers`
+- `import answers` in notebook
 
 [common.py](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/intro.ipynb)
 - code shared between notebooks
-- the result of a refactor :):

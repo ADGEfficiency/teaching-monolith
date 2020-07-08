@@ -1,3 +1,9 @@
+[Data science is different now](https://veekaybee.github.io/2019/02/13/data-science-is-different/)
+
+[Lessons Learned: How to Prepare for a Data Science Interview](https://blog.galvanize.com/how-to-prepare-for-a-technical-interview/)
+
+[gkamradt/Lessons-Learned-Data-Science-Interviews](https://github.com/gkamradt/Lessons-Learned-Data-Science-Interviews)
+
 ## Interview advice
 
 Know how to introduce yourself.  Memorize the first few sentences of your introduction.  One option is to talk about your education and experience:
@@ -114,3 +120,31 @@ Unlike a resume, which is confined by length, a LinkedIn profile allows you to d
 [The Secret sauce to landing a data science role](https://www.reddit.com/r/datascience/comments/d9a3o1/the_secret_sauce_to_landing_a_data_science_role/)
 
 The skills listed are merely talking points. Your interviewer most likely understands that you aren't currently an expert at every skill they question. They are likely interviewing you until they get to skills you are unfamiliar with. How do you respond when you don't know something? Do you admit it, or do you try and cover your competency? Are you defensive or are you curious? **This is a continuous learning and feedback role.**
+
+---
+
+link to linkdin, github
+- not whatsapp, mobile ??
+
+Summary
+- show passion for learning
+- be honest about what you care about
+- highlight what you want them to look at (ie if they dont have time, what is the one thing you want them to see)
+
+Skills
+- tailored the position
+
+Cover letter
+- targeted
+- im am applying for etc
+
+Project
+git, blog, slides
+
+Summary, experience, education, skils, project
+
+Company understanding - crunchbase
+- history - number of people, funding
+- business model - how do they make money
+- position in the market - competitors
+- challenges

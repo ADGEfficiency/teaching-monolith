@@ -1,3 +1,8 @@
+# Sequences
+
+Key takeaways:
+
+
 ## Content
 
 [keras.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/sequences/keras.ipynb)
@@ -5,14 +10,30 @@
 - MNIST
 - functional API
 
-[recurrent.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/sequences/keras.ipynb)
+[recurrent.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/sequences/recurrent.ipynb)
 - recurrent neural network - motivations & mechanics
 - character level language modeling
 
-[lstm.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/sequences/keras.ipynb)
+[lstm.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/sequences/lstm.ipynb)
 - LSTMs - motivations & mechanics
 - GRUs
 - sin wave prediction
+
+[seq2seq.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/sequences/seq2seq.ipynb)
+- embeddings
+- encoder-decoder architecture
+
+[attention.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/sequences/attention.ipynb)
+- additive attention
+- dot-product attention
+- transformers
+
+
+## Reccomended reading
+
+[Understanding LSTM Networks](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+Attention? Attention! - Lilian Wang - [text](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html)
 
 ## Further reading
 

@@ -105,6 +105,12 @@ What can be made parallel
 - key requirement is independence
 - lawn mowing versus baby making 
 
+Parallel across
+- CPU cores (single machine)
+- multiple machines
+- multiple data centres
+- multiple regions
+
 
 ## Three systems for processing/delivering data
 

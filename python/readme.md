@@ -24,6 +24,10 @@ It is recommended that the notebooks are taught in the following order:
 - [web scraping](https://github.com/ADGEfficiency/teaching-monolith/blob/master/python/web-scraping.ipynb)
 - [linear programming](https://github.com/ADGEfficiency/teaching-monolith/blob/master/python/web-scraping.ipynb)
 
-## Bottom up course
+### Bottom up course
 
 Also contained here is a more traditional bottom up introduction to Python, where concepts & syntax are taught explicitly.
+
+## Further reading
+
+I maintain a larger collection of Python resources (blog posts, talks etc) at [programming-resoruces/python](https://github.com/ADGEfficiency/programming-resources/tree/master/python)

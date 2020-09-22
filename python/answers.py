@@ -8,13 +8,13 @@ from pulp import LpProblem, LpMinimize, LpVariable, LpStatus
 
 def store_biography_table(rows):
     out = []
-    for row in rows: 
+    for row in rows:
         if row.find('th') and row.find('td'):
             out.append(
                 {row.find('th').text: row.find('td').text}
             )
 
-    #  clean unicode 
+    #  clean unicode
     for row in out:
         for k, v in row.items():
             row[k] = v.replace('\xa0', '')
@@ -23,7 +23,7 @@ def store_biography_table(rows):
 
 def all_external_links(url):
     response = requests.get(url)
-    soup = BeautifulSoup(response.text)
+    soup = BeautifulSoup(response.text, features="html.parser")
 
     table = soup.find_all('a')
 
@@ -34,13 +34,13 @@ def all_external_links(url):
                 out.append(li)
         except:
             pass
-        
+
     return out
 
 
 def dl_img(url):
     res = requests.get(url)
-    soup = BeautifulSoup(res.text)
+    soup = BeautifulSoup(res.text, features="html.parser")
     imgs = soup.find_all('img')
 
     for img in imgs:
@@ -56,9 +56,9 @@ def dl_img(url):
 
 def find_next_url(url):
     res = requests.get(url)
-    soup = BeautifulSoup(res.text)
+    soup = BeautifulSoup(res.text, features="html.parser")
     links = soup.find_all('a')
-    
+
     for l in links:
         try:
             if l['rel'] == ["prev"]:
@@ -76,8 +76,8 @@ def main():
     for _ in range(5):
         dl_img(url)
         url = find_next_url(url)
-       
-    
+
+
 def xckd_simple():
     urls = []
     for idx in range(1, 10):
@@ -87,7 +87,6 @@ def xckd_simple():
     return urls
 
 
-
 def transportation():
     port_capacity = [20, 30, 30, 50]
     market_demand = [20, 10, 5]
@@ -95,12 +94,12 @@ def transportation():
     #  one price for a port-market pair
     np.random.seed(42)
     port_cost = np.random.uniform(
-        0, 1, 
+        0, 1,
         size=len(port_capacity) * len(market_demand)
     )
 
     port_cost = port_cost.reshape(len(port_capacity), len(market_demand))
-    
+
     #  variables
     var = []
     for port in range(len(port_capacity)):

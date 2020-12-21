@@ -1,4 +1,5 @@
-# Random forests
+# Random Forests
+
 
 ## Bootstrap sampling
 
@@ -9,6 +10,7 @@ Statistical technique of **resampling**
 - more sample efficient with our dataset
 
 Can be equal in size to original dataset
+
 
 ## Bagging
 
@@ -25,6 +27,7 @@ Fundamental idea = averaging across high variance, low bias trees
 ![](assets/est.png)
 
 [Image from here](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205)
+
 
 ### Bagging reduces variance
 
@@ -43,6 +46,7 @@ np.var((x1 + x2) / 2)  #  should be close to 4 + 4 / 2
 
 Can use the **out of bag** (OOB) samples to measure generalization
 - cross validation for free
+
 
 ## Random forests
 
@@ -72,7 +76,11 @@ How correlated are the splits?
 Deeper trees = higher variance
 - grow trees deep, no pruning
 
+
 ### Random forest hyperparameters
+
+Based on the sklearn random forest models
+- [regressor](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestRegressor.html)
 
 With these hyperparameters we are trying to control
 - how random the split of **data** is (once per tree)
@@ -82,6 +90,20 @@ With these hyperparameters we are trying to control
 `n_estimators`
 - increasing num trees wont affect bias, will only reduce variance
 
+`max_depth`
+- controls variance
+
+`min_samples_split`
+- samples required to split a node
+- controls variance
+
+`min_samples_leaf`
+- samples required on the left & right nodes after a split
+- controls variance
+
+`min_weight_fraction_leaf`
+- relevant if sample weighting is used
+
 `max_features`
 - how many features to split on
 - rule of thumb = sqrt(num_features)
@@ -89,23 +111,29 @@ With these hyperparameters we are trying to control
 - small num features = reduce variance increase bias
 - lots of noisy = small m will decrease probability of choosing an important variable at a split
 
-`min samples per leaf` increase a bit (default is 1) to get smaller trees w less overfitting
+`max_leaf_nodes`
+- interacts with max depth
 
-`max_depth`
-- controls variance
+`min_impurity_decrease`
+- threshold on the quality of splits allowed
 
-`?`
-- minimum terminal node size
-- increasing will reduce variance
+`max_samples`
+- how many samples to have in the bootstrapped dataset
 
-`?`
-- max node size - often set at no limit
-- setting a limit will make smaller trees & reduce variance
+`n_jobs`
+- how many CPU cores to use when training
+
 
 ### Feature importances
 
+When we ensemble decision trees, we lose the interpretability that a single tree gives us
+
+Two ways to measure importance in random forests
+- decrease in model accuracy if values of variables are randomly set (on OOB data) - more reliable, but requires more computation
+- average decrease in Gini score for all nodes that were split on a variable (on training data) - sheds light on which variables are used for splits
+
 ```python
-def plot_feature_importances(rf, cols, model_dir):
+def plot_feature_importances(rf, cols, model_dir='.'):
     importances = pd.DataFrame()
     importances.loc[:, 'importances'] = rf.feature_importances_
     importances.loc[:, 'features'] = cols
@@ -116,22 +144,13 @@ def plot_feature_importances(rf, cols, model_dir):
     f.savefig(os.path.join(model_dir, 'importances.png'))
 ```
 
+For categorical features, RF are biased in favour of attributes with more levels
+- variable importance scores for RF are not reliable for this kind of data
+
+
+### Feature selection
+
 Non-predictive features don't hurt so much with trees
 - use multiple metrics that are proxies for same concept as predictors
 - two or three things that measure it indirectly
 - ie absolute and relative differences!
-
-Use multiple metrics that are proxies for same concept as predictors- two or three things that measure it indirectly - i.e. absolute and relative differences!
-
-When we ensemble decision trees, we lose the interpretability that a single tree gives us
-
-Two ways to measure importance in random forests
-- decrease in model accuracy if values of variables are randomly set (on OOB data)
-- average decrease in Gini score for all nodes that were split on a variable (on training data)
-
-Accuracy decrease is more reliable, but requires more computation
-
-Gini decrease sheds light on which variables are used for splits
-
-For categorical features, RF are biased in favour of attributes with more levels
-- variable importance scores for RF are not reliable for this kind of data

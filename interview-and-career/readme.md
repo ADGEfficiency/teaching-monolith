@@ -12,6 +12,16 @@ Know how to introduce yourself.  Memorize the first few sentences of your introd
 
 Having something memorized means you will always be off to a good start.
 
+Questions to ask
+
+- training budget
+- size of team, how long have they been there (to see if team is new / churning)
+- data engineering support
+- laptops
+- cloud
+- do you do deep learning
+
+
 ## Email pitch
 
 Intro
@@ -25,6 +35,10 @@ Final project
 Interest to learn more
 - excited about the problems you are working on
 - love to find out more about the data team / what you are working on
+
+## Applying
+
+Always try to use the company website - not on LinkedIn or third party
 
 ## Prepare for interview
 
@@ -120,6 +134,12 @@ Unlike a resume, which is confined by length, a LinkedIn profile allows you to d
 [The Secret sauce to landing a data science role](https://www.reddit.com/r/datascience/comments/d9a3o1/the_secret_sauce_to_landing_a_data_science_role/)
 
 The skills listed are merely talking points. Your interviewer most likely understands that you aren't currently an expert at every skill they question. They are likely interviewing you until they get to skills you are unfamiliar with. How do you respond when you don't know something? Do you admit it, or do you try and cover your competency? Are you defensive or are you curious? **This is a continuous learning and feedback role.**
+
+
+## Projects
+
+Great example
+- https://medium.com/merantix/journey-from-academic-paper-to-industry-usage-cf57fe598f31
 
 ---
 

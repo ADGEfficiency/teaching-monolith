@@ -1,4 +1,4 @@
-# Decision tree based ensembles
+# Decision Tree Ensembles
 
 ## Lecture notes
 

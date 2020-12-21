@@ -11,6 +11,8 @@ A one day course introducing NumPy and linear algebra.  The course is split into
 
 Chapter 2 of [Deep Learning - Ian Goodfellow, Yoshua Bengio and Aaron Courville](https://www.deeplearningbook.org/)
 
+[Array programming with NumPy - Nature](https://www.nature.com/articles/s41586-020-2649-2)
+
 [Matrix Cookbook](https://www.math.uwaterloo.ca/~hwolkowi/matrixcookbook.pdf)
 
 [A Visual Intro to NumPy and Data Representation](https://jalammar.github.io/visual-numpy/) 

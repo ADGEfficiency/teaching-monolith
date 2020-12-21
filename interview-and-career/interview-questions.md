@@ -1,5 +1,4 @@
-- business context
-- not simple or easy
+[alexeygrigorev/data-science-interviews ](https://github.com/alexeygrigorev/data-science-interviews) - data science interview questions with answers
 
 ## p-values
 
@@ -13,6 +12,29 @@ Based on this, decide whether each of the following statements is true or false:
 - you can deduce the probability that the alternative hypothesis is true. 
 - you know, if you decide to reject the null hypothesis, the probability that you are making the wrong decision. 
 - you have a reliable experimental finding, in the sense that if your experiment were repeated many times, you would obtain a significant result in 99% of trials.
+
+# Questions
+
+## Generic
+
+Where ALGO can be
+- SVM
+- random forest
+- gradient boosted trees
+
+Explain ALGO machine learning algorithm in detail 
+
+Is ALGO parametric or non-parametric?
+
+
+## SVM
+
+What are support vectors in SVM?
+
+What are the different kernel functions in SVM?
+
+
+---
 
 What is your favourite loss function?
 
@@ -32,11 +54,6 @@ What is selection bias?
 - aka sampling bias = samples having different probabilities than others
 - non iid
 
-Explain SVM machine learning algorithm in detail.
-
-What are support vectors in SVM?
-
-What are the different kernel functions in SVM?
 
 Explain decision tree algorithm in detail.
 

@@ -1,37 +1,45 @@
-# Decision trees
+# Decision Trees
 
-## Why tree based ensembles
+
+## Why ensembles of trees 
 
 Bread and butter of a data scientist
 - entire careers will be made on the back of tree based methods
 - many companies have ensembles in production
 - XGBoost is the king of Kaggle
 
+
 ## When to use tree based ensembles
 
 - tabular data
 - non-linear & non-smooth relationships
+- ordinal features
 - regression or classification
+
 
 ## Key advantages
 
-- performance
+- predictive performance
 - no scaling of target or features required
-- training can be parallelized
+- fast training - can be parallelized
+- output probabilities - based on the voting
 - interpretable - feature importances
 
-## What tree based methods
 
-Decision trees
+## What tree based methods are there?
+
+Decision tree
+- single, deterministic 
 
 Random forests
 - parallel learning
-- random sampling of rows (bagging)
+- random sampling of rows with replacement - bootstrapping
 - random sampling of features
 
 Boosting
 - sequential learning
 - random sampling of rows
+
 
 ## Ensembling
 
@@ -48,6 +56,7 @@ Different methods of combining multiple base learners
 - **boosting** = sequential, adaptive learning
 - stacking = parallel learners combined by training a model
 
+
 ## Error in supervised learning
 
 Error = bias + variance + noise
@@ -62,6 +71,7 @@ These different ensemble methods tackle the tradeoff in different ways
 ![](assets/var_bias.png)
 
 [Image from here](https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205).
+
 
 ## Decision trees
 
@@ -89,6 +99,7 @@ Disadvantages
 - high variance
 - non-robust (small change in data can cause large change in final tree)
 
+
 ### Finding the decision boundary for a split
 
 We want to make splits that give us the best separation (aka purity) in our child nodes
@@ -102,7 +113,7 @@ Split the data on the feature that results in the largest information gain (IG)
 
 $$ IG = I_{parent} - \frac{N_{left}}{N} I_{left} - \frac{N_{right}}{N} I_{right} $$
 
-We have options for how we measure infomation $I$, all based on the probability (or proportion) $P$ of the classes in our parent & child nodes
+We have options for how we measure information $I$, all based on the probability (or proportion) $P$ of the classes in our parent & child nodes
 - gini coefficient = $G = 1 - \sum P^{2} $
 - entropy = $E = - \sum P \cdot \log P $
 
@@ -110,10 +121,11 @@ We have options for how we measure infomation $I$, all based on the probability 
 
 For regression, we measure impurity using squared deviations from the mean
 
+
 ### Decision trees hyperparameters
 
 Choice of impurity measure
 
 Rules to stop splitting
-- minimum size of the subpartition
+- minimum size of the sub-partition
 - minimum impurity reduction - penalty to tree complexity

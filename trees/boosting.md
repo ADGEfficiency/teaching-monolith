@@ -7,11 +7,13 @@ There are a few variants
 - gradient boosting
 - stochastic gradient boosting (using samples without replacement for each tree)
 
+
 ## Example - teacher journey home length
 
 Your teacher estimates their travel time home by looking at the weather.  A student has access the data they don't (from Google Maps).  The student predicts the teacher will be 5 minutes slower
 
 The combination of these two prediction is the prediction of a gradient boosted ensemble of two people as base learners (equivalent to trees) using data from the weather and Google Maps (the features).
+
 
 ## Gradient boosted trees
 
@@ -42,21 +44,49 @@ Can work with weird loss functions
 - can handle constant gradients
 - quantile (pinball) loss
 
+
+## Gradient descent with functions
+
+Both are
+- iterative
+- minimize a loss
+
+The gradients are the residuals!
+- fit each base learner to the -ve gradient of the loss function from the previous iteration
+
+Gradient descent = follow negative gradients to choose parameter updates
+- descend by changing parameters
+
+Gradient boosting = choose a function that points in negative gradient direction 
+- descend by introducing new models
+
+Misleading to think of gradient boosting as fitting residuals (or even pseudo residuals as the gradients are often named), it is actually gradient descent in function space.
+
+
 ## Implementations
 
 - [XGBoost](https://xgboost.readthedocs.io/) - start here
 - [CatBoost](https://catboost.ai/) 
 - [LightGBM](https://lightgbm.readthedocs.io/en/latest/)
 
+
 ## Boosting hyperparameters
 
-`num_round`
+Based on the [XGBoost documentation](https://xgboost.readthedocs.io/en/latest/python/python_api.html)
+
+Other implementation docs
+
+- [sklearn GradientBoostingClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html)
+
+`n_estimators`
 - number of boosting steps
 
-`eta`
-- learning rate
-- controls how trees are added together
+`max_depth`
 - control variance
+
+`learning_rate`
+- controls how trees are added together
+- controls variance
 - smaller for noisy data
 
 `subsample`
@@ -72,8 +102,9 @@ Can work with weird loss functions
 - squared Euclidean distance
 - L2 regularization
 
-`max_depth`
-- control variance
+`gamma`
+- loss reduction threshold for making partition on a tree
+
 
 ## Starting point hyperparameters
 
@@ -85,8 +116,6 @@ Add capacity to combat bias - add rounds
 
 Reduce capacity to combat variance - depth / regularization
 
-Best in minicomp
-
 ```json
 {'colsample_bytree': 0.7978421458577196, 'lambd': 2.5982975135904516, 'max_depth': 4, 'subsample': 0.8913639174845348, 'n_estimators': 500}
 ```
@@ -95,11 +124,3 @@ Best in minicomp
 
 Parallelization within a single tree
 - create branches independently
-
-## Are there gradients in gradient boosting?
-
-The gradients are the residuals!
-
-Fit each base learner to the -ve gradient of the loss function from the previous iteration.
-
-Misleading to think of gradient boosting as fitting residuals (or even pseudo residuals as the gradients are often named), it is actually gradient descent in function space.

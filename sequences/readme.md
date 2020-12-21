@@ -1,8 +1,5 @@
 # Sequences
 
-Key takeaways:
-
-
 ## Content
 
 [keras.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/sequences/keras.ipynb)
@@ -36,6 +33,8 @@ Key takeaways:
 Attention? Attention! - Lilian Wang - [text](https://lilianweng.github.io/lil-log/2018/06/24/attention-attention.html)
 
 ## Further reading
+
+[Transformers from Scratch](http://peterbloem.nl/blog/transformers)
 
 [Visualizing memorization in RNNs](https://distill.pub/2019/memorization-in-rnns/)
 

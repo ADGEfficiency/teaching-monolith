@@ -1,17 +1,9 @@
 # Statistics
 
-These notes are built material from
-- [Statistics Done Wrong - Alex Reinhart](https://www.statisticsdonewrong.com/)
-- [Think Stats 2nd Edition - Allen B. Downey](https://greenteapress.com/wp/think-stats-2e/)
-- [Practical Statistics for Data Scientists - Bruce & Bruce](https://www.oreilly.com/library/view/practical-statistics-for/9781491952955/)
-- [Deep Learning - Goodfellow, Bengio and Courville](https://www.deeplearningbook.org/)
-- [Statistics for Hackers - PyCon 2016 - Jake Vanderplas](https://www.youtube.com/watch?v=Iq9DzN6mvYA)
-- [Visual Information Theory - colah's blog](https://colah.github.io/posts/2015-09-Visual-Information/)
-- [Sutton & Barto - Reinforcement Learning: An Introduction](http://incompleteideas.net/book/RLbook2018.pdf)
+One day course in statistics for data scientists.
 
-I recommend all the resources above and thank all the authors for their excellent contributions.
 
-## Course content
+## Course Content
 
 [intro.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/intro.ipynb)
 - IID
@@ -75,3 +67,18 @@ I recommend all the resources above and thank all the authors for their excellen
 
 [common.py](https://github.com/ADGEfficiency/teaching-monolith/blob/master/statistics/intro.ipynb)
 - code shared between notebooks
+
+
+## Resources & References
+
+I recommend all the resources below and thank all the authors for their excellent contributions:
+
+- [Statistics Done Wrong - Alex Reinhart](https://www.statisticsdonewrong.com/)
+- [Think Stats 2nd Edition - Allen B. Downey](https://greenteapress.com/wp/think-stats-2e/)
+- [Practical Statistics for Data Scientists - Bruce & Bruce](https://www.oreilly.com/library/view/practical-statistics-for/9781491952955/)
+- [Deep Learning - Goodfellow, Bengio and Courville](https://www.deeplearningbook.org/)
+- [Statistics for Hackers - PyCon 2016 - Jake Vanderplas](https://www.youtube.com/watch?v=Iq9DzN6mvYA)
+- [Visual Information Theory - colah's blog](https://colah.github.io/posts/2015-09-Visual-Information/)
+- [Sutton & Barto - Reinforcement Learning: An Introduction](http://incompleteideas.net/book/RLbook2018.pdf)
+
+

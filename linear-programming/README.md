@@ -65,6 +65,8 @@ Some of the skill in writing linear programs:
 - knowing the tricks that are needed for your particular business problem (I've discovered most of mine from 1990's energy engineering papers),
 - google `linear programming tricks` if you are interested.
 
+The mathematics of linear programming solvers is not covered here - if you are interested, the [Simplex Method](https://en.wikipedia.org/wiki/Simplex_algorithm) is a good place to start.  It is perhaps interesting to note that Simplex is iterative :)
+
 
 ## What is linear programming?
 

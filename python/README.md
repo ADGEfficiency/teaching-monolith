@@ -2,10 +2,11 @@
 
 Why Python?
 
-- fast to write - suitable for research
-- allows quick iteration over ideas
-- can be put into production
-- massive ecosystem
+- fast to write - suitable for research,
+- allows quick iteration over ideas,
+- can be put into production.
+- massive ecosystem, mature language.
+
 
 ## Content
 
@@ -22,7 +23,6 @@ The final notebook introduces a technique that has been invaluable in every job 
 It is recommended that the notebooks are taught in the following order:
 - [using an API](https://github.com/ADGEfficiency/teaching-monolith/blob/master/python/using-an-api.ipynb)
 - [web scraping](https://github.com/ADGEfficiency/teaching-monolith/blob/master/python/web-scraping.ipynb)
-- [linear programming](https://github.com/ADGEfficiency/teaching-monolith/blob/master/python/web-scraping.ipynb)
 
 ### Bottom up course
 
@@ -30,4 +30,4 @@ Also contained here is a more traditional bottom up introduction to Python, wher
 
 ## Further reading
 
-I maintain a larger collection of Python resources (blog posts, talks etc) at [programming-resoruces/python](https://github.com/ADGEfficiency/programming-resources/tree/master/python)
+I maintain a larger collection of Python resources (blog posts, talks etc) at [programming-resoruces/python](https://github.com/ADGEfficiency/programming-resources/tree/master/python).

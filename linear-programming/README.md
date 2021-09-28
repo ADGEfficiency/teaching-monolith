@@ -36,26 +36,27 @@ Writing linear programs requires two skills - the first is what prevents most li
 
 You won't need to write a solver, or understand how a linear programming solver works. 
 
-You can be an effective driver without understanding the chemistry of combustion - **you can solve business problems without understanding the all math behind linear programming**.
+You can be an effective car driver without understanding the chemistry of combustion - **you can solve business problems without understanding the all math behind linear programming**.
+
+
+## What math do I need?
 
 The main math things to understand are:
 
 1. what linearity is,
 2. what a discontinuity is.
 
-Experience will help you understand how to avoid both non-linearity & discontinuites in your programs.  If you can't, then you need a non-linear solver.
+Experience will help you understand how to avoid both non-linearity & discontinuities in your programs.  If you can't, then you need a non-linear solver.
 
 
 ## What is writing linear programs like?
 
-Restrictive compared to normal programming:
+Restrictive compared to normal programming - lots of effort to keep the program linear/avoid discontinuities.
 
-- lots of effort to keep the program linear,
+Can't use many things programmers rely on often:
 
-Can't use many things programmers rely on often, like:
-
-- multiplying variables together (non-linear),
-- conditional branching `if` (discontinuous),
+- multiplying variables together (this non-linear),
+- conditional branching `if` (this creates a discontinuity),
 - taking the absolute value of a float (discontinuous).
 
 Some of the skill in writing linear programs:
@@ -63,9 +64,11 @@ Some of the skill in writing linear programs:
 - being able to link variables to each other (without multiplying them together),
 - transforming non-linear constraints/objective functions into linear constraints,
 - knowing the tricks that are needed for your particular business problem (I've discovered most of mine from 1990's energy engineering papers),
-- google `linear programming tricks` if you are interested.
+- google `linear programming tricks` if you are interested in seeing the kinds of patterns commonly used.
 
-The mathematics of linear programming solvers is not covered here - if you are interested, the [Simplex Method](https://en.wikipedia.org/wiki/Simplex_algorithm) is a good place to start.  It is perhaps interesting to note that Simplex is iterative :)
+The mathematics of linear programming solvers is not covered here - if you are interested, the [Simplex Method](https://en.wikipedia.org/wiki/Simplex_algorithm) is a good place to start.
+
+One interesting feature of the Simplex algorithm (and probably many other linear solvers) is that they are iterative.
 
 
 ## What is linear programming?
@@ -138,16 +141,21 @@ Constraints can be equalities or inequalities - both are used interchangeably.
 
 ## What is optimization?
 
-Making something small (like cost) or big (like profit) by changing variables (parameters, weights).
+Making something small (like cost) or big (like profit) by changing variables (parameters, weights) 
+
+An optimization problems has (at minimum) two components:
+
+1. objective function,
+2. variables.
 
 Local versus global optima - for a maximization problem:
 
 ![](assets/local.png)
 
-
 Convex optimization
+
 - not a useful concept when building programs (but you may come across it),
-- there are two types - concave & convex, convex is the linear/easy one.
+- there are two types - concave & convex, convex is the linear/easy/good one.
 
 A linear program is a convex optimization problem - we are guaranteed to find the globally optimal solution (or infeasible/unbounded).
 
@@ -160,8 +168,10 @@ Non-linearity:
 
 Discontinuities:
 
-- optimizers often take a hill-climbing type approach (SGD, Simplex, evolutionary algorihtms),
-- climbing hills is hard if there are large ravines/gaps!
+- optimizers often take a hill-climbing type approach (SGD, Simplex, evolutionary algorithms),
+- climbing hills is hard if there are large ravines/gaps.
+
+Both of these features (non-linearity or discontinuites) can be either challenges that make a problem more difficult (but still solvable) or can eliminate using certain algorithms for certain problems.
 
 
 ### What is linearity?
@@ -172,7 +182,7 @@ Linear:
 
 - the same way is always up/down,
 - there is only one correct way to move up/down - it is always the same,
-- you may come across the term *affine* (a fancy way to say linear).
+- you may come across the term *affine* - this is just a fancy way to say linear.
 
 Non-linear:
 

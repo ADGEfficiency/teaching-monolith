@@ -15,6 +15,8 @@ After this lecture material we will do practical work together in [linear-progra
 
 ## Resources & Further Reading
 
+[Building Linear Programs With Ortools - Ross Hart | PyData Global 2021](https://youtu.be/rA4QHmjqo1c)
+
 Learn more about linear programming:
 
 - [6 part blog post series on linear programming with PuLP - Ben Alex Keen](http://benalexkeen.com/blog/),

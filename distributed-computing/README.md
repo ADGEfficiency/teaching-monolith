@@ -87,7 +87,7 @@ with Pool(popsize, maxtasksperchild=32) as pool:
 
 ## Foundational Examples
 
-<img src="assets/examples.png" width="768" height="768">
+<img src="assets/examples.png">
 
 Lawn mowing - can be split into independent tasks (different patches of the lawn).
 

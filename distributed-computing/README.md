@@ -1,27 +1,29 @@
 # Distributed Computing
 
-A one day course on distributed computation in Python:
+A half-day course on distributed computation in Python:
 
 - functional programming,
-- threads, `multiprocessing` and `asyncio`,
-- Python ecosystem,
-- MapReduce, Spark, `ray` & `dask`.
+- threads & `threading`, processes & `multiprocessing`, `asyncio`,
+- the Python ecosystem for distributed computation.
 
 Outcomes:
 
-- an introduction to the ecosystem of distributed computing with Python,
 - how to program in a functional style,
 - why `multiprocessing` is a data scientist's best friend,
-- differences between using threads / processes in Python,
-- difference between concurrency and parallelism.
+- understanding concurrency, parallelism and asynchrony,
+- using threads & processes in Python,
+- introduction to options for distributed computation in Python.
+
 
 Practical work:
 
-- [functional-programming.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/functional-programming.ipynb) - [run with binder](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Ffunctional-programming.ipynb),
-- [multiprocessing.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/functional-programming.ipynb) - [run with binder](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Fmultiprocessing.ipynb),
-- mapreduce,
-- asyncio.
+- [functional-programming.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/functional-programming.ipynb) - [run in binder](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Ffunctional-programming.ipynb),
+- [multiprocessing.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/multiprocessing.ipynb) - [run in binder](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Fmultiprocessing.ipynb),
+- [mapreduce.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/mapreduce.ipynb) - [run in binder](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Fmapreduce.ipynb),
+- [asyncio.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/asyncio.ipynb) - [run in binder](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Fasyncio.ipynb).
 
+
+# Summary
 
 ## Ecosystem Cheat Sheet
 
@@ -40,43 +42,50 @@ Practical work:
 
 Multiple threads with `threading`:
 
-- IO bound problems,
+- use on IO bound problems,
 - global interpreter lock (GIL) prevents parallel compute with threads (in Python),
 - threading (in Python) is not useful for CPU bound tasks (you can only run one thread at once).
 
 Multiple processes with `multiprocessing`:
 
-- CPU bound problems,
+- use on CPU bound problems,
 - requires memory than threads,
 - good solution for many data science problems - often we are CPU bound.
 
 Asynchronous with `asyncio`:
 
-- IO bound problems,
-- able to do concurrent computation in a single thread.
+- use on IO bound problems,
+- concurrent computation with a single thread.
 
 
-## Multiple machines in Python
+## Multiple machines options in Python
 
-- `dask`,
-- `ray`,
-- `pyspark` (Python binding for Spark).
+Common options:
 
-
-## Batch processing
-
-<img src="assets/f1.png" width="400" height="400">
-
-*Designing Data-Intensive Applications - The Big Ideas Behind Reliable, Scalable, and Maintainable Systems - Martin Kleppmann*
+- dask - run either by Prefect or Coiled,
+- pyspark - Python bindings for Spark (which is implemented in Scala),
+- ray - for a stateful actor model of distributed compute,
+- tensorflow & pytorch - both can perform compute across many machines & GPUs.
 
 
-## Functional programming
+## Batch, streaming and online
+
+Styles of data processing differ mainly on the frequency of the data flow:
+
+- Batch processing is offline - once per day/hour style updates,
+- Streaming is both online and offline - often in real time, using tools like Kafka,
+- Online services want an immediate reply - websites, REST APIs and databases.
+
+The focus of this course is **batch processing**.
+
+
+# Functional programming
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Ffunctional-programming.ipynb)
 
 Functional programming concepts (such as map, filter, and reduce) are the atomic operations of many distributed computing frameworks.
 
-One example is mapping over a pool of processes:
+Take mapping over a pool of processes:
 
 ```python
 from multiprocessing import Pool
@@ -85,26 +94,32 @@ with Pool(popsize, maxtasksperchild=32) as pool:
     results = p.starmap(episode, zip(population, seeds))
 ```
 
+
+# Concurrency, Parallelism and Asynchrony
+
 ## Foundational Examples
 
 <img src="assets/examples.png">
 
 Lawn mowing - can be split into independent tasks (different patches of the lawn).
 
-Baby making - cannot be sped up.
+Baby making - cannot be sped up - more pregnant mothers will not make a child any quicker.
 
-A chess grandmaster playing many games of chess against amateurs at once:
+Playing many games of chess against at once:
 
 - grandmaster takes 5 minutes to make a move,
 - amateurs take 1 hour,
 - games can be played quicker if the grandmaster moves to the next board while the amateur is thinking,
-- grandmaster never acts in parallel (only one game at a time), but does act concurrently.
+- grandmaster never acts in parallel (only one game at a time), but is acting concurrently (dealin with many games at once).
+
 
 ## Concurrency
 
 [Wikipedia](https://en.wikipedia.org/wiki/Concurrency_(computer_science))
 
-Concurrency = **dealing with many things** at once - it is the **structure** of a program - whether we can execute a program in a different order.
+Concurrency is **dealing with many things at once**.
+
+Concurrency is the property of the **how we structure** of a program - whether we can execute a program in a different order.
  
 For a concurrent program, the order doesn't matter:
 
@@ -119,11 +134,15 @@ In IO bound problems we mostly wait (reading/writing to disk, using the network)
 
 ## Parallelism
 
-Parallelism = **doing many things** at once - it is how we can **execute** of a program.  Parallelism is a special case of concurrency.
+Parallelism is **doing many things at once**. 
 
-A key characteristic of a parallelizable task is **independence** - we need to be able to split the work into many tasks that can run independently - this naturally favours a functional style of programming (where our functions have no side effects and we don't rely or are affected by state).
+Parallelism is a feature of **how we execute** a program - parallelism is a special case of concurrency.
 
-We could parallelize across:
+A key characteristic of a parallelizable program is **independence** - being able to split the work into many tasks that can run independently. 
+
+This concept of independent tasks favours a functional style of programming (where our functions have no side effects and don't depend on state).
+
+We can parallelize compute across:
 
 - threads (in one CPU core),
 - CPU cores (in one machine),
@@ -132,91 +151,82 @@ We could parallelize across:
 - multiple regions,
 - multiple planets.
 
-Key oppourtunities for parallelism in code = `for` loops, `maps`.
+Key opportunities for parallelism in code are often long, sequential iteration of independent tasks, such as `for` loops, `maps`.
 
 
-## Things we do with computers
+## Asynchrony
+
+[Wikipedia](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)
+
+Common to use a future/promise - subroutines that to represent an ongoing event occuring external to the main flow of the program - such as waiting for disk or network (IO bound problems).
+
+In Python we can use `asyncio` to program in an asynchronous style.
+
+
+## Things computers do
 
 1. Compute - transform data,
 2. Memory - store data,
 3. Network - send/receive data.
 
 
-## The problems we can have with computers
+## How computers compute
+
+<img src="assets/thread-process.png" width="75%">
+
+The CPU core is **hardware**.  It runs one sequence of computation at a time - it is fundamentally sequential.  The speed of a CPU core is measured in cycles per second (GHz).
+
+Threads are **software** - the software representation of a sequence of computation.  Memory is shared between threads.
+
+Processes are **software** - they are a program that runs threads.  Each process has a dedicated memory space - making them memory intensive versus threads.
+
+
+## The problems computers have
 
 1. Compute - doing lots of compute - CPU bound,
 2. Memory - not enough storage (RAM or disk) - out of memory (OOM),
 3. Network - waiting to read/write data (network, disk) = IO bound.
 
 
-## How can we make computer program go faster?
+## Make computer program go fast
 
-CPU bound problem:
+1 - CPU bound problems:
 
 - doing the sequential computation faster (faster processor),
-- doing the computation in parallel faster (more processors).
+- doing the computation in parallel faster (more processors),
+- parallelize across CPU cores,
+- parallelize with a GPU.
 
-Memory problem:
+2 - Memory problems:
 
+- being careful about `dtypes` (0 or 1 versus `'true'` and `'false'`),
+- only read in columns you need,
+- process data in chunks (row wise),
 - processing data in smaller chunks,
 - more memory.
+ 
+For GPU memory problems you can reduce model size, reduce batch size or get a bigger GPU.
 
-IO bound problem:
+3 - IO bound problems:
 
-- doing something else while we are waiting.
+- doing something else while we are waiting,
+- threading or async.
 
-Data scientists will mostly be concerned with CPU bound problems - but memory tends to be the limiting factor (RAM is expensive, and has historically been the limit on computers, not processor speed).  
+Data scientists will mostly be concerned with CPU bound problems - but memory tends to be the limiting factor in most programs.
 
-GPUs are an excellent example of this.
+RAM is expensive, and has historically been the limit on computers, not processor speed - GPUs are an excellent example of this.
 
+## Why distribute compute?
 
-## How do computers compute
+There are diminishing returns on increasing processor speeds - Moore's Law (processor speeds doubling every two years) is coming to an end.
 
-CPU core:
+Trend in modern computing is more processors - more CPU cores (common to have 8-16 on laptops).  The GPU is this in the extreme (thousands of CPU cores) per GPU card.
 
-- hardware,
-- runs one sequence of computation at a time,
-- fundamentally sequential,
-- speed measured in cycles per second (GHz).
+These cores can be on the same machine - they can also be on many different machines. Many machines = **distributed computation**.
 
-Threads:
+The cloud is made up of many small machines working together - it is cheaper to run lots of small machines than less, larger machines. 
 
-- software,
-- sequence of computation,
-- shared memory between threads.
-
-Process:
-
-- software,
-- program that runs threads,
-- dedicated memory space.
-
-
-## How can we do compute faster?
-
-Two options:
-
-- faster processor (more cycles per second, GHz),
-- do compute in parallel.
-
-Diminishing returns on increasing processor speeds:
-
-- Moore's Law (processor speeds doubling every two years) is coming to an end
-
-Trend in modern computing is more processors:
-
-- more CPU cores (common to have 8-16 on laptops),
-- GPU is this in the extreme (thousands of CPU cores).
-
-These cores can be on the same machine:
-
-- also be on many different machines,
-- many machines = **distributed computation**.
-
-The cloud is made up of many small machines working together:
-
-- cheaper to run lots of small machines than less, larger machines,
-- a key challenge is dealing with machine failure (fault tolerance).
+A key challenge with running many small machines is dealing with machine failure - being fault tolerant.
 
 
 ## Should I use multiple machines?
@@ -232,78 +242,7 @@ Distributed computing is fundamentally harder:
 - machine failure.
 
 
-## Cheat sheet (Python specific)
 
-CPU bound problems:
-
-- parallelize across cores,
-- parallelize with GPU.
-
-IO bound problem:
-
-- threading,
-- async.
-
-Memory problems:
-
-- being careful about `dtypes` (0 or 1 versus `'true'` and `'false'`),
-- only read in columns you need,
-- process data in chunks (row wise),
-- bigger machine.
-
-GPU memory problems:
-
-- reduce model size,
-- reduce batch size,
-- get a bigger GPU.
-
-Question - what are the drawbacks with these three?
-
-
-## Single machine options in Python
-
-Multiple threads:
-
-- `threading`,
-- IO bound problems,
-- GIL prevents parallel compute with threads -> not useful for CPU bound tasks.
-
-Multiple processes:
-
-- `multiprocessing`,
-- CPU bound problems,
-- more memory than threads,
-- good solution for data science.
-
-Asynchronous:
-
-- `asyncio`,
-- IO bound problems,
-- concurrent computation in a single thread.
-
-
-## Multiple machines in Python
-
-- `dask`
-- `ray`
-- `pyspark` (Python binding for Spark)
-
-
-## Don't forget about Bash
-
-From *Designing Data-Intensive Applications - The Big Ideas Behind Reliable, Scalable, and Maintainable Systems - Martin Kleppmann*
-- we can process gigabytes of data in seconds with our friendly, always available bash tools:
-
-```bash
-cat ~/.bash_history | 
-  awk '{print $0}' |  #  not needed!
-	sort |  # `sort` = repeated commands n times in a row
-	uniq -c | # `uniq` = filers out repeats with a counter
-	sort -r -n | # `sort` = by count, in reverse order
-	head -n 10
-```
-
-Lots can be done with compositions of classics like `sed`, `grep`, `sort`, `uniq`, `xargs` - `sort` and `xargs` will both parallelize across CPU cores.
 
 
 ## Python standard library concurrent computation options
@@ -317,24 +256,6 @@ Lots can be done with compositions of classics like `sed`, `grep`, `sort`, `uniq
 | Use case          | IO bound    | CPU bound         | IO bound    |
 | Uses OS scheduler | yes         | yes               | no          |
 | Multitasking      | preepmtive  | preepmtive        | cooperative |
-
-
-## Sharing isn't always a good thing
-
-Sharing data can be a problem - [race conditions](https://en.wikipedia.org/wiki/Race_condition).
-
-Solution = place [locks](https://en.wikipedia.org/wiki/Lock_(computer_science)) at critical points in multithreaded code:
-- a lock (aka mutex - mutual exclusion) enforces limits on access to resources - commonly memory,
-- locks add overhead.
-
-This can cause more problems - [resource starvation](https://en.wikipedia.org/wiki/Starvation_(computer_science)) = denial of access to required resources - [deadlocks](https://en.wikipedia.org/wiki/Deadlock) = threads waiting on threads waiting on threads.
-
-Sharing memory is hard - writing multithreaded code in Python is hard - [Raymond Hettinger, Keynote on Concurrency, PyBay 2017](https://www.youtube.com/watch?v=9zinZmE3Ogk) for a detailed example of how to write multithreaded code properly in Python.
-
-
-## Thread safety
-
-Thread safety = avoiding race conditions that can occur with shared memory - often done using locks.
 
 
 ## `threading`
@@ -354,7 +275,16 @@ Threads share memory - they exist in the same process, and same memory space.  I
 
 Difficult to get right - if you have an IO bound problem, `asyncio` is a safer choice than attempting multi-threading in Python.
 
-[Raymond Hettinger, Keynote on Concurrency, PyBay 2017](https://www.youtube.com/watch?v=9zinZmE3Ogk) is a good talk on this topic.
+
+### Sharing isn't always a good thing
+
+Sharing data can be a problem - [race conditions](https://en.wikipedia.org/wiki/Race_condition).
+
+Thread safety = avoiding race conditions that can occur with shared memory - this is done using [locks](https://en.wikipedia.org/wiki/Lock_(computer_science)) at critical points in multi-threaded code.  A lock (aka mutex - mutual exclusion) enforces limits on access to resources - commonly memory.  These locks add overhead.
+
+Locks can cause problems such as [resource starvation](https://en.wikipedia.org/wiki/Starvation_(computer_science)) (denial of access to required resources) or [deadlocks](https://en.wikipedia.org/wiki/Deadlock) (threads waiting on threads waiting on threads).
+
+Sharing memory is hard - writing multithreaded code in Python is also hard - [Raymond Hettinger, Keynote on Concurrency, PyBay 2017](https://www.youtube.com/watch?v=9zinZmE3Ogk) for a detailed example of how to write multithreaded code properly in Python.
 
 
 ## `multiprocessing`
@@ -398,85 +328,47 @@ An example of *split-apply-combine*:
 
 Map is independent and reduce is independent.  The reduce works on data that all has the same key - the order of combining doesn't matter (concurrent).
 
-[mapreduce.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/distributed-computing/mapreduce.ipynb)
-
-
 
 ## Apache Hadoop
 
-https://en.wikipedia.org/wiki/Apache_Hadoop
+[Wikipedia](https://en.wikipedia.org/wiki/Apache_Hadoop)
 
-https://github.com/andkret/Cookbook/blob/master/sections/03-AdvancedSkills.md#hadoop-platforms
+Hadoop is open source, and includes an implementation of MapReduce.
 
-Hadoop is open source 
-- includes an implementation of MapReduce
-- data = Hadoop Distributed File System (HDFS)
-- writes intermediate data to disk
+It uses a different data format - Hadoop Distributed File System (HDFS).
 
 
 ## Apache Spark
 
-https://en.wikipedia.org/wiki/Apache_Spark
+[Wikipedia](https://en.wikipedia.org/wiki/Apache_Spark)
 
-https://github.com/andkret/Cookbook/blob/master/sections/03-AdvancedSkills.md#apache-spark
+More complex data transformations than MapReduce - also keeps intermediate data in memory (not written to disk).
 
-More complex data transformations than MapReduce:
+Spark runs in a Java Virtual Machine and is written in Scala (it has Java & Python bindings). Many businesses run on Java and already have access to a JVM.
 
-- keeps intermediate data in memory.
+It is an extension of Hadoop MapReduce - offering ML, SQL, streaming and graph processing.
 
-Spark:
-
-- runs in a JVM (Java) - many businesses run on Java and have access to a JVM,
-- written in Scala - has Java & Python bindings,
-- more mature, more features.
-
-Extension of Hadoop MapReduce:
-
-- ML, SQL, streaming, graph processing.
-
-Use for parallel data processing - query optimizer.
-
-Tabular data / dataframe based.
-
-Has Python bindings `pyspark`.
+Is fundamentally tabular data / dataframe based.
 
 
 ## Dask
 
-[Detailed introduction to Dask](https://docs.dask.org/en/latest/)
+[Introduction to Dask](https://docs.dask.org/en/latest/) - [comparison to Spark](https://docs.dask.org/en/latest/spark.html)
 
-[Comparison to Spark](https://docs.dask.org/en/latest/spark.html)
+Dask is written in Python - has a generic task scheduler and can also be used for dataframe type operations.
 
-Dask
-- Python
-- has a generic task scheduler
-- **use for dataframe type operations**
+Dask offers the ability to process larger than memory datasets and parallelize compute across both threads and processes.
 
-Dask offers the ability to
-- process larger than memory datasets
-- parallelize compute
+Couples will with pandas, numpy - not entire reimplementations.
 
-Couples with pandas, numpy
-- not entire reimpelemtations
+We will work through a few sections of the [dask tutorial](https://tutorial.dask.org/00_overview.html) - suggest looking at:
 
+- 01_dask.delayed.ipynb - lazy compute,
+- 03_array.ipynb - data larger than memory,
+- 04_dataframe.ipynb,
+- 05_distributed.ipynb.
 
-### Dask Tutorial
-
-We will work through a few sections of the [dask tutorial](https://tutorial.dask.org/00_overview.html).
-
-We will look at:
-
-- 01_dask.delayed.ipynb - lazy compute
-- 03_array.ipynb - data larger than memory
-- 04_dataframe.ipynb
-- 05_distributed.ipynb
-
-
-### Dask delayed best practices
-
-[Best practices](https://docs.dask.org/en/latest/delayed-best-practices.html)
-
-Call delayed on the function, not the result
+[Best practices](https://docs.dask.org/en/latest/delayed-best-practices.html) - call delayed on the function, not the result:
 
 ```python
 #  lazy - do this
@@ -494,9 +386,8 @@ Include lot's of `dask.delayed` in each `dask.compute` call - ideally want one c
 [docs](https://ray.readthedocs.io/en/latest/) - [github](https://github.com/ray-project/ray) - [tutorials](https://github.com/ray-project/tutorial)
 
 ```bash
-pip install 'ray[all]'
-
-python ray_example.py
+$ pip install 'ray[all]'
+$ python ray_example.py
 ```
 
 - task scheduler (same as Dask)
@@ -511,69 +402,41 @@ https://github.com/ray-project/ray/issues/642
 > Ray uses a distributed bottom-up scheduling scheme in which workers submit tasks to local schedulers, and local schedulers assign tasks to workers. Local schedulers can also forward tasks to global schedulers which can load balance between machines. Dask uses a centralized scheduler, which manages all tasks for the cluster. The point of the bottom-up scheduling approach is to improve task latency and throughput.
 
 Distributed:
-- hyperparameter tuning [guide](https://ray.readthedocs.io/en/latest/tune-usage.html)
-- reinforcement learning
-- model training
+
+- hyperparameter tuning [guide](https://ray.readthedocs.io/en/latest/tune-usage.html),
+- reinforcement learning,
+- model training.
 
 
 ### ray tune
 
-Hyperparameter tuning library in ray 
-- can be used with keras, sklearn, pytorch
+Hyperparameter tuning library in ray - can be used with Keras, sklearn and PyTorch.
 
-Tutorials:
-- basics - [colab](https://colab.research.google.com/github/ray-project/tutorial/blob/master/tune_exercises/exercise_1_basics.ipynb) - [github](https://github.com/ray-project/tutorial/blob/master/tune_exercises/exercise_1_basics.ipynb)
+Basic tutorial - [colab](https://colab.research.google.com/github/ray-project/tutorial/blob/master/tune_exercises/exercise_1_basics.ipynb) - [github](https://github.com/ray-project/tutorial/blob/master/tune_exercises/exercise_1_basics.ipynb).
 
 
-## Asynchrony
+# Async IO and `asyncio`
 
-[Wikipedia](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming))
+Async IO is a programming paradigm (language independent) - `asyncio` is the Python implementation.
+ 
+Async IO offers single thread concurrency - not parallelism - a way to do deal with many things at once with a single thread.
 
-How to deal with events outside the main flow of the program
-
-We want to not block the main program while we are waiting for outside events
-
-This provides a degree of parallelism
-
-Common to use a future/promise - subroutines return these to represent the ongoing event.
-
-
-## Async IO
-
-Async IO = programming paradigm (language independent)
-- equivalent to threads or processes
-- `asyncio` is the Python implementation
-- single thread, single core
-
-Offers concurrency (not parallelism)
-- way to do deal with many things at once with a single thread!
-
-Require two things
-- asyncronous functions, that can stop & start
-- event scheduler
+Require two things - asynchronous functions (that can stop & start) and an event scheduler.
 
 async / await = API for asynchronous programming
 
-Uses
-- IO bound, networking
-- IO from a socket is ready for reading / writing
-- GUI
+Use for IO bound problems.
 
-Speed will be limited by the slowest step
-- https://en.wikipedia.org/wiki/Amdahl%27s_law
-- https://en.wikipedia.org/wiki/Rate-determining_step
+Speed will be limited by the slowest step - see [Amdahl's Law](https://en.wikipedia.org/wiki/Amdahl%27s_law) and [rate determining step](https://en.wikipedia.org/wiki/Rate-determining_step).
 
 
 ### Coroutine
 
 [Wikipedia](https://en.wikipedia.org/wiki/Coroutine)
 
-Function that can pause to let others run
-- specalized Python generator
+Function that can pause to let others run - a specalized Python generator.
 
-Async routines can pause (to let other routines run)
-- can stop it's execution before returning
-- can pass control to another coroutine
+Async routines can pause (to let other routines run) - can stop it's execution before returning - can pass control to another coroutine.
 
 
 ### Cooperative multitasking
@@ -664,3 +527,5 @@ Designing Data-Intensive Applications - The Big Ideas Behind Reliable, Scalable,
 [Multiprocessing Vs. Threading In Python: What You Need To Know](https://timber.io/blog/multiprocessing-vs-multithreading-in-python-what-you-need-to-know/)
 
 [Async IO in Python: A Complete Walkthrough - Real Python](https://realpython.com/async-io-python/)
+
+[I Avoid Async/Await](https://uniqname.medium.com/why-i-avoid-async-await-7be98014b73e) - [HN discussion](https://news.ycombinator.com/item?id=31050650)

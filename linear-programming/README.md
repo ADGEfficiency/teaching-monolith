@@ -1,6 +1,8 @@
 # Linear Programming
 
-A half-day course on **linear programming** - a useful optimization technique.
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=https%3A%2F%2Fgithub.com%2FADGEfficiency%2Fteaching-monolith%2Fblob%2Fmaster%2Flinear-programming%2Flinear-programming.ipynb)
+
+A half-day course on **linear programming** - a useful optimization technique with many practical applications.
 
 ![](assets/nl.png)
 
@@ -10,29 +12,13 @@ Key outcomes of this course:
 - what is linearity & why is it important,
 - what makes a program non-linear.
 
-After this lecture material we will do practical work together in [linear-programming.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/linear-programming/linear-programming.ipynb) - [run the notebook on Colab](https://colab.research.google.com/github/ADGEfficiency/teaching-monolith/blob/master/linear-programming/linear-programming.ipynb).
+Course content:
+
+- short lecture based on the README (this document),
+- practical work in [linear-programming.ipynb](https://github.com/ADGEfficiency/teaching-monolith/blob/master/linear-programming/linear-programming.ipynb). You can [run the notebook on Binder](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=https%3A%2F%2Fgithub.com%2FADGEfficiency%2Fteaching-monolith%2Fblob%2Fmaster%2Flinear-programming%2Flinear-programming.ipynb).
 
 
-## Resources & Further Reading
-
-[Building Linear Programs With Ortools - Ross Hart | PyData Global 2021](https://youtu.be/rA4QHmjqo1c) - excellent talk on LP with OR Tools.
-
-Learn more about linear programming:
-
-- [6 part blog post series on linear programming with PuLP - Ben Alex Keen](http://benalexkeen.com/blog/),
-- [Michel Goemans lecture notes](https://math.mit.edu/~goemans/18310S15/lpnotes310.pdf),
-- [Linear programming textbook by Thomas Ferguson](https://www.math.ucla.edu/~tom/LP.pdf),
-- [Linear programming tricks from the AIMMS Modeling Guide](https://download.aimms.com/aimms/download/manuals/AIMMS3OM_LinearProgrammingTricks.pdf)
-
-Resources used:
-- [Piecewise Linearization - Wikipedia](https://en.wikipedia.org/wiki/Piecewise_linear_function),
-- [Simplex Method - Wikipedia](https://en.wikipedia.org/wiki/Simplex_algorithm),
-- [Linear programming - Wikipedia](https://en.wikipedia.org/wiki/Linear_programming).
-
-Some of my own work with linear programming:
-
-- [dispatching electric battery storage](https://github.com/ADGEfficiency/energy-py-linear),
-- [using linear programming to measure forecast accuracy](https://adgefficiency.com/energy-py-linear-forecast-quality/).
+# Lecture
 
 
 ## Using linear programs to solve business problems
@@ -331,3 +317,26 @@ continuous - max * binary <= 0
 
 
 I will leave it to the engaged & motivated reader to do the same exercise for the minimum bound constraint and different values of the binary variable (for both constraints).
+
+
+## Resources & Further Reading
+
+[Building Linear Programs With Ortools - Ross Hart | PyData Global 2021](https://youtu.be/rA4QHmjqo1c) - excellent talk on LP with OR Tools.
+
+Learn more about linear programming:
+
+- [6 part blog post series on linear programming with PuLP - Ben Alex Keen](http://benalexkeen.com/blog/),
+- [Michel Goemans lecture notes](https://math.mit.edu/~goemans/18310S15/lpnotes310.pdf),
+- [Linear programming textbook by Thomas Ferguson](https://www.math.ucla.edu/~tom/LP.pdf),
+- [Linear programming tricks from the AIMMS Modeling Guide](https://download.aimms.com/aimms/download/manuals/AIMMS3OM_LinearProgrammingTricks.pdf)
+
+Resources used:
+- [Piecewise Linearization - Wikipedia](https://en.wikipedia.org/wiki/Piecewise_linear_function),
+- [Simplex Method - Wikipedia](https://en.wikipedia.org/wiki/Simplex_algorithm),
+- [Linear programming - Wikipedia](https://en.wikipedia.org/wiki/Linear_programming).
+
+Some of my own work with linear programming:
+
+- [dispatching electric battery storage](https://github.com/ADGEfficiency/energy-py-linear),
+- [using linear programming to measure forecast accuracy](https://adgefficiency.com/energy-py-linear-forecast-quality/).
+

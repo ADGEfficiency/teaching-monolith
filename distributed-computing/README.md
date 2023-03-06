@@ -79,13 +79,13 @@ Styles of data processing differ mainly on the frequency of the data flow:
 The focus of this course is **batch processing**.
 
 
-# Functional programming
+# Functional Programming
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Ffunctional-programming.ipynb)
 
 Functional programming concepts (such as map, filter, and reduce) are the atomic operations of many distributed computing frameworks.
 
-Take mapping over a pool of processes:
+Take mapping over a pool of processes (which uses a map):
 
 ```python
 from multiprocessing import Pool
@@ -93,6 +93,10 @@ from multiprocessing import Pool
 with Pool(popsize, maxtasksperchild=32) as pool:
     results = p.starmap(episode, zip(population, seeds))
 ```
+
+We will continue our look at functional using the Binder notebook:
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ADGEfficiency/teaching-monolith/HEAD?labpath=distributed-computing%2Ffunctional-programming.ipynb)
 
 
 # Concurrency, Parallelism and Asynchrony
@@ -117,28 +121,24 @@ Playing many games of chess against at once:
 
 [Wikipedia](https://en.wikipedia.org/wiki/Concurrency_(computer_science))
 
-Concurrency is **dealing with many things at once**.
-
-Concurrency is the property of the **how we structure** of a program - whether we can execute a program in a different order.
+**Concurrency is dealing with many things at once** - it is a property of how we *structure* of a program - whether we can execute a program in a different order.
  
 For a concurrent program, the order doesn't matter:
 
-- can be run in a different order sequentially,
-- can be run in parallel,
+- it can be run in a different order sequentially,
+- it can be run in parallel,
 - tasks can overlap.
 
-Concurrency requires communication and coordination (often waiting) - it can be used to make use of limited hardware (like a single thread).  
+This concurrency requires *communication and coordination* (often waiting).  Being able do something else while you wait can be used to make use of limited hardware (like using a single thread do do many things concurrently).  
 
-In IO bound problems we mostly wait (reading/writing to disk, using the network) - in a concurrent program, this waiting time can be used to do other things (and thereby deal with many things at once).
+In IO bound problems we mostly wait (reading/writing to disk or using the network) - in a concurrent program, this waiting time can be used to do other things (and thereby deal with many things at once).
 
 
 ## Parallelism
 
-Parallelism is **doing many things at once**. 
+**Parallelism is doing many things at once** - it is a property of how we *execute* a program - parallelism is a special case of concurrency.
 
-Parallelism is a feature of **how we execute** a program - parallelism is a special case of concurrency.
-
-A key characteristic of a parallelizable program is **independence** - being able to split the work into many tasks that can run independently. 
+A key characteristic of a parallelizable program is **independence** - being able to split the work into many tasks that can run independently - they don't rely or interact with any of the other parallelizable tasks.
 
 This concept of independent tasks favours a functional style of programming (where our functions have no side effects and don't depend on state).
 
@@ -146,17 +146,20 @@ We can parallelize compute across:
 
 - threads (in one CPU core),
 - CPU cores (in one machine),
-- multiple machines,
-- multiple data centres,
-- multiple regions,
-- multiple planets.
+- machines,
+- data centres,
+- regions,
+- planets,
+- universes.
+
+### Where can I make my program parallel?
 
 Key opportunities for parallelism in code are often long, sequential iteration of independent tasks, such as `for` loops, `maps`.
 
 
 ## Asynchrony
 
-[Wikipedia](https://en.wikipedia.org/wiki/Asynchrony_(computer_programming)
+[Wikipedia](https://en.wikipedia.org/wiki/Asynchrony)
 
 Common to use a future/promise - subroutines that to represent an ongoing event occuring external to the main flow of the program - such as waiting for disk or network (IO bound problems).
 
@@ -165,23 +168,29 @@ In Python we can use `asyncio` to program in an asynchronous style.
 
 ## Things computers do
 
+Computers do three things:
+
 1. Compute - transform data,
-2. Memory - store data,
-3. Network - send/receive data.
+2. Memory/Remember - store data,
+3. Network/Communicate - send/receive data.
 
 
 ## How computers compute
 
-<img src="assets/thread-process.png" width="75%">
-
 The CPU core is **hardware**.  It runs one sequence of computation at a time - it is fundamentally sequential.  The speed of a CPU core is measured in cycles per second (GHz).
+
+<img src="assets/thread-process.png" width="75%">
 
 Threads are **software** - the software representation of a sequence of computation.  Memory is shared between threads.
 
-Processes are **software** - they are a program that runs threads.  Each process has a dedicated memory space - making them memory intensive versus threads.
+Processes are **software** - they are a program that runs threads.  
+
+Each process has a dedicated memory space - making them memory intensive versus threads.
 
 
 ## The problems computers have
+
+The problems we have relate to what we try to do with computers:
 
 1. Compute - doing lots of compute - CPU bound,
 2. Memory - not enough storage (RAM or disk) - out of memory (OOM),
@@ -203,6 +212,8 @@ Processes are **software** - they are a program that runs threads.  Each process
 - only read in columns you need,
 - process data in chunks (row wise),
 - processing data in smaller chunks,
+- avoiding unecessary copies of data,
+- setup numpy arrays ahead of time,
 - more memory.
  
 For GPU memory problems you can reduce model size, reduce batch size or get a bigger GPU.

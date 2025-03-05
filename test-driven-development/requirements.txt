@@ -3,7 +3,7 @@ attrs==19.1.0
 coverage==4.5.3
 hypothesis==4.27.0
 importlib-metadata==0.18
-joblib==0.13.2
+joblib==1.2.0
 more-itertools==7.1.0
 numpy==1.16.4
 packaging==19.0
